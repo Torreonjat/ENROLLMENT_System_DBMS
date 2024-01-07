@@ -29,10 +29,16 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.createNew = new ENROLLMENT_System.TRControls.TRButtons();
             this.class_searchbar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.updateClass = new ENROLLMENT_System.TRControls.TRButtons();
+            this.savebtn = new ENROLLMENT_System.TRControls.TRButtons();
+            this.thirdSched = new ENROLLMENT_System.TRControls.TRButtons();
+            this.secondSched = new ENROLLMENT_System.TRControls.TRButtons();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,20 +72,34 @@ namespace ENROLLMENT_System
             this.C_code = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.displayClass_GridView = new System.Windows.Forms.DataGridView();
-            this.trButtons1 = new ENROLLMENT_System.TRControls.TRButtons();
-            this.trButtons2 = new ENROLLMENT_System.TRControls.TRButtons();
-            this.trButtons3 = new ENROLLMENT_System.TRControls.TRButtons();
-            this.trButtons4 = new ENROLLMENT_System.TRControls.TRButtons();
-            this.trButtons5 = new ENROLLMENT_System.TRControls.TRButtons();
+            this.displayclassResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subUnitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profMnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profLnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayClass_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayclassResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.trButtons3);
+            this.panel1.Controls.Add(this.createNew);
             this.panel1.Controls.Add(this.class_searchbar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -87,6 +107,25 @@ namespace ENROLLMENT_System
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 68);
             this.panel1.TabIndex = 0;
+            // 
+            // createNew
+            // 
+            this.createNew.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.createNew.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.createNew.BorderColor = System.Drawing.Color.Black;
+            this.createNew.BorderRadius = 20;
+            this.createNew.BorderSize = 1;
+            this.createNew.FlatAppearance.BorderSize = 0;
+            this.createNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createNew.ForeColor = System.Drawing.Color.White;
+            this.createNew.Location = new System.Drawing.Point(1139, 16);
+            this.createNew.Name = "createNew";
+            this.createNew.Size = new System.Drawing.Size(150, 52);
+            this.createNew.TabIndex = 18;
+            this.createNew.Text = "CREATE NEW";
+            this.createNew.TextColor = System.Drawing.Color.White;
+            this.createNew.UseVisualStyleBackColor = false;
             // 
             // class_searchbar
             // 
@@ -96,6 +135,7 @@ namespace ENROLLMENT_System
             this.class_searchbar.Name = "class_searchbar";
             this.class_searchbar.Size = new System.Drawing.Size(568, 34);
             this.class_searchbar.TabIndex = 17;
+            this.class_searchbar.TextChanged += new System.EventHandler(this.class_searchbar_TextChanged);
             // 
             // label1
             // 
@@ -109,10 +149,10 @@ namespace ENROLLMENT_System
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.trButtons5);
-            this.panel2.Controls.Add(this.trButtons4);
-            this.panel2.Controls.Add(this.trButtons2);
-            this.panel2.Controls.Add(this.trButtons1);
+            this.panel2.Controls.Add(this.updateClass);
+            this.panel2.Controls.Add(this.savebtn);
+            this.panel2.Controls.Add(this.thirdSched);
+            this.panel2.Controls.Add(this.secondSched);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
@@ -149,6 +189,81 @@ namespace ENROLLMENT_System
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1353, 291);
             this.panel2.TabIndex = 1;
+            // 
+            // updateClass
+            // 
+            this.updateClass.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.updateClass.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.updateClass.BorderColor = System.Drawing.Color.Black;
+            this.updateClass.BorderRadius = 20;
+            this.updateClass.BorderSize = 1;
+            this.updateClass.FlatAppearance.BorderSize = 0;
+            this.updateClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateClass.ForeColor = System.Drawing.Color.White;
+            this.updateClass.Location = new System.Drawing.Point(1091, 145);
+            this.updateClass.Name = "updateClass";
+            this.updateClass.Size = new System.Drawing.Size(198, 60);
+            this.updateClass.TabIndex = 76;
+            this.updateClass.Text = "Update";
+            this.updateClass.TextColor = System.Drawing.Color.White;
+            this.updateClass.UseVisualStyleBackColor = false;
+            // 
+            // savebtn
+            // 
+            this.savebtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.savebtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.savebtn.BorderColor = System.Drawing.Color.Black;
+            this.savebtn.BorderRadius = 20;
+            this.savebtn.BorderSize = 1;
+            this.savebtn.FlatAppearance.BorderSize = 0;
+            this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savebtn.ForeColor = System.Drawing.Color.White;
+            this.savebtn.Location = new System.Drawing.Point(1091, 66);
+            this.savebtn.Name = "savebtn";
+            this.savebtn.Size = new System.Drawing.Size(198, 59);
+            this.savebtn.TabIndex = 76;
+            this.savebtn.Text = "Save";
+            this.savebtn.TextColor = System.Drawing.Color.White;
+            this.savebtn.UseVisualStyleBackColor = false;
+            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
+            // 
+            // thirdSched
+            // 
+            this.thirdSched.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.thirdSched.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.thirdSched.BorderColor = System.Drawing.Color.Black;
+            this.thirdSched.BorderRadius = 12;
+            this.thirdSched.BorderSize = 1;
+            this.thirdSched.FlatAppearance.BorderSize = 0;
+            this.thirdSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.thirdSched.ForeColor = System.Drawing.Color.White;
+            this.thirdSched.Location = new System.Drawing.Point(849, 218);
+            this.thirdSched.Name = "thirdSched";
+            this.thirdSched.Size = new System.Drawing.Size(138, 31);
+            this.thirdSched.TabIndex = 75;
+            this.thirdSched.Text = "3rd Schedule";
+            this.thirdSched.TextColor = System.Drawing.Color.White;
+            this.thirdSched.UseVisualStyleBackColor = false;
+            // 
+            // secondSched
+            // 
+            this.secondSched.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.secondSched.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.secondSched.BorderColor = System.Drawing.Color.Black;
+            this.secondSched.BorderRadius = 12;
+            this.secondSched.BorderSize = 1;
+            this.secondSched.FlatAppearance.BorderSize = 0;
+            this.secondSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.secondSched.ForeColor = System.Drawing.Color.White;
+            this.secondSched.Location = new System.Drawing.Point(512, 218);
+            this.secondSched.Name = "secondSched";
+            this.secondSched.Size = new System.Drawing.Size(138, 30);
+            this.secondSched.TabIndex = 75;
+            this.secondSched.Text = "2nd Schedule";
+            this.secondSched.TextColor = System.Drawing.Color.White;
+            this.secondSched.UseVisualStyleBackColor = false;
             // 
             // label17
             // 
@@ -441,105 +556,158 @@ namespace ENROLLMENT_System
             // 
             this.displayClass_GridView.AllowUserToAddRows = false;
             this.displayClass_GridView.AllowUserToDeleteRows = false;
+            this.displayClass_GridView.AutoGenerateColumns = false;
             this.displayClass_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayClass_GridView.Location = new System.Drawing.Point(-124, 6);
+            this.displayClass_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete,
+            this.classidDataGridViewTextBoxColumn,
+            this.subCodeDataGridViewTextBoxColumn,
+            this.classCodeDataGridViewTextBoxColumn,
+            this.daysOfWeekDataGridViewTextBoxColumn,
+            this.schedTimeDataGridViewTextBoxColumn,
+            this.yearStartDataGridViewTextBoxColumn,
+            this.yearEndDataGridViewTextBoxColumn,
+            this.subUnitsDataGridViewTextBoxColumn,
+            this.classRoomDataGridViewTextBoxColumn,
+            this.profFnameDataGridViewTextBoxColumn,
+            this.profMnameDataGridViewTextBoxColumn,
+            this.profLnameDataGridViewTextBoxColumn,
+            this.sectnameDataGridViewTextBoxColumn,
+            this.sectyearDataGridViewTextBoxColumn,
+            this.sectextDataGridViewTextBoxColumn});
+            this.displayClass_GridView.DataSource = this.displayclassResultBindingSource;
+            this.displayClass_GridView.Location = new System.Drawing.Point(12, 3);
             this.displayClass_GridView.Name = "displayClass_GridView";
             this.displayClass_GridView.ReadOnly = true;
-            this.displayClass_GridView.Size = new System.Drawing.Size(1315, 251);
+            this.displayClass_GridView.Size = new System.Drawing.Size(1329, 372);
             this.displayClass_GridView.TabIndex = 0;
+            this.displayClass_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayClass_GridView_CellContentClick);
             // 
-            // trButtons1
+            // displayclassResultBindingSource
             // 
-            this.trButtons1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BorderColor = System.Drawing.Color.Black;
-            this.trButtons1.BorderRadius = 12;
-            this.trButtons1.BorderSize = 1;
-            this.trButtons1.FlatAppearance.BorderSize = 0;
-            this.trButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons1.ForeColor = System.Drawing.Color.White;
-            this.trButtons1.Location = new System.Drawing.Point(512, 217);
-            this.trButtons1.Name = "trButtons1";
-            this.trButtons1.Size = new System.Drawing.Size(138, 31);
-            this.trButtons1.TabIndex = 75;
-            this.trButtons1.Text = "2nd Schedule";
-            this.trButtons1.TextColor = System.Drawing.Color.White;
-            this.trButtons1.UseVisualStyleBackColor = false;
+            this.displayclassResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_classResult);
             // 
-            // trButtons2
+            // Edit
             // 
-            this.trButtons2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons2.BorderColor = System.Drawing.Color.Black;
-            this.trButtons2.BorderRadius = 12;
-            this.trButtons2.BorderSize = 1;
-            this.trButtons2.FlatAppearance.BorderSize = 0;
-            this.trButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons2.ForeColor = System.Drawing.Color.White;
-            this.trButtons2.Location = new System.Drawing.Point(849, 218);
-            this.trButtons2.Name = "trButtons2";
-            this.trButtons2.Size = new System.Drawing.Size(138, 31);
-            this.trButtons2.TabIndex = 75;
-            this.trButtons2.Text = "3rd Schedule";
-            this.trButtons2.TextColor = System.Drawing.Color.White;
-            this.trButtons2.UseVisualStyleBackColor = false;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // trButtons3
+            // Delete
             // 
-            this.trButtons3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons3.BorderColor = System.Drawing.Color.Black;
-            this.trButtons3.BorderRadius = 20;
-            this.trButtons3.BorderSize = 1;
-            this.trButtons3.FlatAppearance.BorderSize = 0;
-            this.trButtons3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons3.ForeColor = System.Drawing.Color.White;
-            this.trButtons3.Location = new System.Drawing.Point(1139, 3);
-            this.trButtons3.Name = "trButtons3";
-            this.trButtons3.Size = new System.Drawing.Size(150, 52);
-            this.trButtons3.TabIndex = 18;
-            this.trButtons3.Text = "CREATE NEW";
-            this.trButtons3.TextColor = System.Drawing.Color.White;
-            this.trButtons3.UseVisualStyleBackColor = false;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
-            // trButtons4
+            // classidDataGridViewTextBoxColumn
             // 
-            this.trButtons4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons4.BorderColor = System.Drawing.Color.Black;
-            this.trButtons4.BorderRadius = 20;
-            this.trButtons4.BorderSize = 1;
-            this.trButtons4.FlatAppearance.BorderSize = 0;
-            this.trButtons4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons4.ForeColor = System.Drawing.Color.White;
-            this.trButtons4.Location = new System.Drawing.Point(1091, 48);
-            this.trButtons4.Name = "trButtons4";
-            this.trButtons4.Size = new System.Drawing.Size(198, 77);
-            this.trButtons4.TabIndex = 76;
-            this.trButtons4.Text = "Save";
-            this.trButtons4.TextColor = System.Drawing.Color.White;
-            this.trButtons4.UseVisualStyleBackColor = false;
+            this.classidDataGridViewTextBoxColumn.DataPropertyName = "Class_id";
+            this.classidDataGridViewTextBoxColumn.HeaderText = "Class_id";
+            this.classidDataGridViewTextBoxColumn.Name = "classidDataGridViewTextBoxColumn";
+            this.classidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // trButtons5
+            // subCodeDataGridViewTextBoxColumn
             // 
-            this.trButtons5.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons5.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons5.BorderColor = System.Drawing.Color.Black;
-            this.trButtons5.BorderRadius = 20;
-            this.trButtons5.BorderSize = 1;
-            this.trButtons5.FlatAppearance.BorderSize = 0;
-            this.trButtons5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons5.ForeColor = System.Drawing.Color.White;
-            this.trButtons5.Location = new System.Drawing.Point(1091, 128);
-            this.trButtons5.Name = "trButtons5";
-            this.trButtons5.Size = new System.Drawing.Size(198, 77);
-            this.trButtons5.TabIndex = 76;
-            this.trButtons5.Text = "Update";
-            this.trButtons5.TextColor = System.Drawing.Color.White;
-            this.trButtons5.UseVisualStyleBackColor = false;
+            this.subCodeDataGridViewTextBoxColumn.DataPropertyName = "Sub_Code";
+            this.subCodeDataGridViewTextBoxColumn.HeaderText = "Sub_Code";
+            this.subCodeDataGridViewTextBoxColumn.Name = "subCodeDataGridViewTextBoxColumn";
+            this.subCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classCodeDataGridViewTextBoxColumn
+            // 
+            this.classCodeDataGridViewTextBoxColumn.DataPropertyName = "Class_Code";
+            this.classCodeDataGridViewTextBoxColumn.HeaderText = "Class_Code";
+            this.classCodeDataGridViewTextBoxColumn.Name = "classCodeDataGridViewTextBoxColumn";
+            this.classCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // daysOfWeekDataGridViewTextBoxColumn
+            // 
+            this.daysOfWeekDataGridViewTextBoxColumn.DataPropertyName = "DaysOfWeek";
+            this.daysOfWeekDataGridViewTextBoxColumn.HeaderText = "DaysOfWeek";
+            this.daysOfWeekDataGridViewTextBoxColumn.Name = "daysOfWeekDataGridViewTextBoxColumn";
+            this.daysOfWeekDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // schedTimeDataGridViewTextBoxColumn
+            // 
+            this.schedTimeDataGridViewTextBoxColumn.DataPropertyName = "SchedTime";
+            this.schedTimeDataGridViewTextBoxColumn.HeaderText = "SchedTime";
+            this.schedTimeDataGridViewTextBoxColumn.Name = "schedTimeDataGridViewTextBoxColumn";
+            this.schedTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearStartDataGridViewTextBoxColumn
+            // 
+            this.yearStartDataGridViewTextBoxColumn.DataPropertyName = "YearStart";
+            this.yearStartDataGridViewTextBoxColumn.HeaderText = "YearStart";
+            this.yearStartDataGridViewTextBoxColumn.Name = "yearStartDataGridViewTextBoxColumn";
+            this.yearStartDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearEndDataGridViewTextBoxColumn
+            // 
+            this.yearEndDataGridViewTextBoxColumn.DataPropertyName = "YearEnd";
+            this.yearEndDataGridViewTextBoxColumn.HeaderText = "YearEnd";
+            this.yearEndDataGridViewTextBoxColumn.Name = "yearEndDataGridViewTextBoxColumn";
+            this.yearEndDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subUnitsDataGridViewTextBoxColumn
+            // 
+            this.subUnitsDataGridViewTextBoxColumn.DataPropertyName = "Sub_Units";
+            this.subUnitsDataGridViewTextBoxColumn.HeaderText = "Sub_Units";
+            this.subUnitsDataGridViewTextBoxColumn.Name = "subUnitsDataGridViewTextBoxColumn";
+            this.subUnitsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classRoomDataGridViewTextBoxColumn
+            // 
+            this.classRoomDataGridViewTextBoxColumn.DataPropertyName = "Class_Room";
+            this.classRoomDataGridViewTextBoxColumn.HeaderText = "Class_Room";
+            this.classRoomDataGridViewTextBoxColumn.Name = "classRoomDataGridViewTextBoxColumn";
+            this.classRoomDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profFnameDataGridViewTextBoxColumn
+            // 
+            this.profFnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Fname";
+            this.profFnameDataGridViewTextBoxColumn.HeaderText = "Prof_Fname";
+            this.profFnameDataGridViewTextBoxColumn.Name = "profFnameDataGridViewTextBoxColumn";
+            this.profFnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profMnameDataGridViewTextBoxColumn
+            // 
+            this.profMnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Mname";
+            this.profMnameDataGridViewTextBoxColumn.HeaderText = "Prof_Mname";
+            this.profMnameDataGridViewTextBoxColumn.Name = "profMnameDataGridViewTextBoxColumn";
+            this.profMnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profLnameDataGridViewTextBoxColumn
+            // 
+            this.profLnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Lname";
+            this.profLnameDataGridViewTextBoxColumn.HeaderText = "Prof_Lname";
+            this.profLnameDataGridViewTextBoxColumn.Name = "profLnameDataGridViewTextBoxColumn";
+            this.profLnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectnameDataGridViewTextBoxColumn
+            // 
+            this.sectnameDataGridViewTextBoxColumn.DataPropertyName = "Sect_name";
+            this.sectnameDataGridViewTextBoxColumn.HeaderText = "Sect_name";
+            this.sectnameDataGridViewTextBoxColumn.Name = "sectnameDataGridViewTextBoxColumn";
+            this.sectnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectyearDataGridViewTextBoxColumn
+            // 
+            this.sectyearDataGridViewTextBoxColumn.DataPropertyName = "Sect_year";
+            this.sectyearDataGridViewTextBoxColumn.HeaderText = "Sect_year";
+            this.sectyearDataGridViewTextBoxColumn.Name = "sectyearDataGridViewTextBoxColumn";
+            this.sectyearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectextDataGridViewTextBoxColumn
+            // 
+            this.sectextDataGridViewTextBoxColumn.DataPropertyName = "Sect_ext";
+            this.sectextDataGridViewTextBoxColumn.HeaderText = "Sect_ext";
+            this.sectextDataGridViewTextBoxColumn.Name = "sectextDataGridViewTextBoxColumn";
+            this.sectextDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataEnt_Class
             // 
@@ -559,6 +727,7 @@ namespace ENROLLMENT_System
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.displayClass_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayclassResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,10 +771,28 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private TRControls.TRButtons trButtons3;
-        private TRControls.TRButtons trButtons5;
-        private TRControls.TRButtons trButtons4;
-        private TRControls.TRButtons trButtons2;
-        private TRControls.TRButtons trButtons1;
+        private TRControls.TRButtons createNew;
+        private TRControls.TRButtons updateClass;
+        private TRControls.TRButtons savebtn;
+        private TRControls.TRButtons thirdSched;
+        private TRControls.TRButtons secondSched;
+        private System.Windows.Forms.BindingSource displayclassResultBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daysOfWeekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schedTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearEndDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subUnitsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classRoomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profFnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profMnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profLnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectyearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectextDataGridViewTextBoxColumn;
     }
 }

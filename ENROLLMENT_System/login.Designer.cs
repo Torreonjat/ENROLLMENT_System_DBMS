@@ -31,6 +31,7 @@ namespace ENROLLMENT_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loginbtn = new ENROLLMENT_System.TRControls.TRButtons();
             this.linkregister = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -42,7 +43,7 @@ namespace ENROLLMENT_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.date = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
-            this.trButtons1 = new ENROLLMENT_System.TRControls.TRButtons();
+            this.showPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +52,8 @@ namespace ENROLLMENT_System
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.trButtons1);
+            this.panel1.Controls.Add(this.showPass);
+            this.panel1.Controls.Add(this.loginbtn);
             this.panel1.Controls.Add(this.linkregister);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tbPassword);
@@ -64,22 +66,43 @@ namespace ENROLLMENT_System
             this.panel1.Size = new System.Drawing.Size(399, 428);
             this.panel1.TabIndex = 0;
             // 
+            // loginbtn
+            // 
+            this.loginbtn.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.loginbtn.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.loginbtn.BorderColor = System.Drawing.Color.Black;
+            this.loginbtn.BorderRadius = 20;
+            this.loginbtn.BorderSize = 1;
+            this.loginbtn.FlatAppearance.BorderSize = 0;
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginbtn.ForeColor = System.Drawing.Color.Black;
+            this.loginbtn.Location = new System.Drawing.Point(120, 339);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Size = new System.Drawing.Size(185, 43);
+            this.loginbtn.TabIndex = 2;
+            this.loginbtn.Text = "Login";
+            this.loginbtn.TextColor = System.Drawing.Color.Black;
+            this.loginbtn.UseVisualStyleBackColor = false;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
+            // 
             // linkregister
             // 
             this.linkregister.AutoSize = true;
             this.linkregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkregister.Location = new System.Drawing.Point(197, 384);
+            this.linkregister.Location = new System.Drawing.Point(251, 396);
             this.linkregister.Name = "linkregister";
             this.linkregister.Size = new System.Drawing.Size(66, 20);
             this.linkregister.TabIndex = 37;
             this.linkregister.TabStop = true;
             this.linkregister.Text = "Sign Up";
+            this.linkregister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkregister_LinkClicked);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 384);
+            this.label2.Location = new System.Drawing.Point(101, 396);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 36;
@@ -119,9 +142,9 @@ namespace ENROLLMENT_System
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(59, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 31;
-            this.label3.Text = "First name";
+            this.label3.Text = "Username";
             // 
             // panel3
             // 
@@ -134,7 +157,7 @@ namespace ENROLLMENT_System
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(121, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(117, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(166, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,40 +177,35 @@ namespace ENROLLMENT_System
             // 
             this.date.AutoSize = true;
             this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date.Location = new System.Drawing.Point(179, 75);
+            this.date.Location = new System.Drawing.Point(101, 72);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(44, 20);
             this.date.TabIndex = 33;
             this.date.Text = "Date";
+            this.date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // time
             // 
             this.time.AutoSize = true;
             this.time.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time.Location = new System.Drawing.Point(64, 15);
+            this.time.Location = new System.Drawing.Point(86, 15);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(297, 46);
             this.time.TabIndex = 32;
             this.time.Text = "HH : MM : SS tt";
+            this.time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // trButtons1
+            // showPass
             // 
-            this.trButtons1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.trButtons1.BackgroundColor = System.Drawing.Color.MediumAquamarine;
-            this.trButtons1.BorderColor = System.Drawing.Color.Black;
-            this.trButtons1.BorderRadius = 20;
-            this.trButtons1.BorderSize = 1;
-            this.trButtons1.FlatAppearance.BorderSize = 0;
-            this.trButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons1.Font = new System.Drawing.Font("Sitka Small Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons1.ForeColor = System.Drawing.Color.Black;
-            this.trButtons1.Location = new System.Drawing.Point(124, 323);
-            this.trButtons1.Name = "trButtons1";
-            this.trButtons1.Size = new System.Drawing.Size(185, 43);
-            this.trButtons1.TabIndex = 2;
-            this.trButtons1.Text = "Login";
-            this.trButtons1.TextColor = System.Drawing.Color.Black;
-            this.trButtons1.UseVisualStyleBackColor = false;
+            this.showPass.AutoSize = true;
+            this.showPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPass.Location = new System.Drawing.Point(131, 306);
+            this.showPass.Name = "showPass";
+            this.showPass.Size = new System.Drawing.Size(141, 24);
+            this.showPass.TabIndex = 38;
+            this.showPass.Text = "Show Password";
+            this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged);
             // 
             // login
             // 
@@ -225,6 +243,7 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label time;
-        private TRControls.TRButtons trButtons1;
+        private TRControls.TRButtons loginbtn;
+        private System.Windows.Forms.CheckBox showPass;
     }
 }

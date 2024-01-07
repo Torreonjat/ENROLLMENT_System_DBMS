@@ -30,26 +30,24 @@ namespace ENROLLMENT_System
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCameraON = new System.Windows.Forms.Button();
-            this.Program_Stud = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tbContact = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbULname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbUFname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pbCamera = new System.Windows.Forms.PictureBox();
+            this.pbCapture = new System.Windows.Forms.PictureBox();
+            this.btnCameraON = new ENROLLMENT_System.TRControls.TRButtons();
+            this.Update = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,30 +56,8 @@ namespace ENROLLMENT_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1337, 100);
+            this.panel1.Size = new System.Drawing.Size(1353, 100);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.Program_Stud);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.tbUsername);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.btnCameraON);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1337, 598);
-            this.panel2.TabIndex = 1;
             // 
             // label1
             // 
@@ -93,142 +69,163 @@ namespace ENROLLMENT_System
             this.label1.TabIndex = 12;
             this.label1.Text = "USER PROFILE";
             // 
-            // pictureBox2
+            // panel2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(95, 65);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(334, 279);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.panel2.Controls.Add(this.Update);
+            this.panel2.Controls.Add(this.btnCameraON);
+            this.panel2.Controls.Add(this.tbContact);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.tbUsername);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.tbULname);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.tbUFname);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pbCamera);
+            this.panel2.Controls.Add(this.pbCapture);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1353, 637);
+            this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // tbContact
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(461, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 148);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCameraON
-            // 
-            this.btnCameraON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCameraON.Location = new System.Drawing.Point(461, 231);
-            this.btnCameraON.Name = "btnCameraON";
-            this.btnCameraON.Size = new System.Drawing.Size(164, 57);
-            this.btnCameraON.TabIndex = 37;
-            this.btnCameraON.Text = "Open Camera";
-            this.btnCameraON.UseVisualStyleBackColor = true;
-            // 
-            // Program_Stud
-            // 
-            this.Program_Stud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Program_Stud.FormattingEnabled = true;
-            this.Program_Stud.Location = new System.Drawing.Point(837, 68);
-            this.Program_Stud.Name = "Program_Stud";
-            this.Program_Stud.Size = new System.Drawing.Size(339, 28);
-            this.Program_Stud.TabIndex = 62;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(688, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 20);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "Type of User";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(837, 398);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(339, 34);
-            this.textBox5.TabIndex = 60;
+            this.tbContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContact.Location = new System.Drawing.Point(837, 328);
+            this.tbContact.Multiline = true;
+            this.tbContact.Name = "tbContact";
+            this.tbContact.Size = new System.Drawing.Size(339, 34);
+            this.tbContact.TabIndex = 60;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(689, 412);
+            this.label7.Location = new System.Drawing.Point(689, 342);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 59;
             this.label7.Text = "Contact No.";
             // 
-            // textBox2
+            // tbUsername
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(837, 310);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(339, 34);
-            this.textBox2.TabIndex = 54;
+            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.Location = new System.Drawing.Point(837, 240);
+            this.tbUsername.Multiline = true;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(339, 34);
+            this.tbUsername.TabIndex = 54;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(689, 324);
+            this.label4.Location = new System.Drawing.Point(689, 254);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 53;
             this.label4.Text = "Username";
             // 
-            // textBox1
+            // tbULname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(837, 226);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 34);
-            this.textBox1.TabIndex = 52;
+            this.tbULname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbULname.Location = new System.Drawing.Point(837, 156);
+            this.tbULname.Multiline = true;
+            this.tbULname.Name = "tbULname";
+            this.tbULname.Size = new System.Drawing.Size(339, 34);
+            this.tbULname.TabIndex = 52;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(689, 240);
+            this.label2.Location = new System.Drawing.Point(689, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 51;
             this.label2.Text = "Last Name";
             // 
-            // tbUsername
+            // tbUFname
             // 
-            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(837, 139);
-            this.tbUsername.Multiline = true;
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(339, 34);
-            this.tbUsername.TabIndex = 50;
+            this.tbUFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUFname.Location = new System.Drawing.Point(837, 69);
+            this.tbUFname.Multiline = true;
+            this.tbUFname.Name = "tbUFname";
+            this.tbUFname.Size = new System.Drawing.Size(339, 34);
+            this.tbUFname.TabIndex = 50;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(689, 153);
+            this.label3.Location = new System.Drawing.Point(689, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 49;
             this.label3.Text = "First Name";
             // 
-            // button1
+            // pbCamera
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(693, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(483, 75);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pbCamera.Location = new System.Drawing.Point(95, 65);
+            this.pbCamera.Name = "pbCamera";
+            this.pbCamera.Size = new System.Drawing.Size(334, 279);
+            this.pbCamera.TabIndex = 1;
+            this.pbCamera.TabStop = false;
+            // 
+            // pbCapture
+            // 
+            this.pbCapture.Location = new System.Drawing.Point(461, 65);
+            this.pbCapture.Name = "pbCapture";
+            this.pbCapture.Size = new System.Drawing.Size(164, 148);
+            this.pbCapture.TabIndex = 0;
+            this.pbCapture.TabStop = false;
+            // 
+            // btnCameraON
+            // 
+            this.btnCameraON.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCameraON.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCameraON.BorderColor = System.Drawing.Color.Black;
+            this.btnCameraON.BorderRadius = 20;
+            this.btnCameraON.BorderSize = 1;
+            this.btnCameraON.FlatAppearance.BorderSize = 0;
+            this.btnCameraON.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCameraON.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCameraON.ForeColor = System.Drawing.Color.White;
+            this.btnCameraON.Location = new System.Drawing.Point(461, 240);
+            this.btnCameraON.Name = "btnCameraON";
+            this.btnCameraON.Size = new System.Drawing.Size(164, 49);
+            this.btnCameraON.TabIndex = 64;
+            this.btnCameraON.Text = "Open Camera";
+            this.btnCameraON.TextColor = System.Drawing.Color.White;
+            this.btnCameraON.UseVisualStyleBackColor = false;
+            this.btnCameraON.Click += new System.EventHandler(this.btnCameraON_Click);
+            // 
+            // Update
+            // 
+            this.Update.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Update.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Update.BorderColor = System.Drawing.Color.Black;
+            this.Update.BorderRadius = 20;
+            this.Update.BorderSize = 1;
+            this.Update.FlatAppearance.BorderSize = 0;
+            this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Update.Location = new System.Drawing.Point(837, 421);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(339, 63);
+            this.Update.TabIndex = 70;
+            this.Update.Text = "Update";
+            this.Update.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // Set_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 698);
+            this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -238,8 +235,8 @@ namespace ENROLLMENT_System
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,19 +246,17 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCameraON;
-        private System.Windows.Forms.ComboBox Program_Stud;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.PictureBox pbCamera;
+        private System.Windows.Forms.PictureBox pbCapture;
+        private System.Windows.Forms.TextBox tbContact;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbULname;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbUFname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private TRControls.TRButtons btnCameraON;
+        private TRControls.TRButtons Update;
     }
 }

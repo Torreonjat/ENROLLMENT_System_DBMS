@@ -29,11 +29,14 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.searchsect = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Sectupdate = new ENROLLMENT_System.TRControls.TRButtons();
+            this.Sectsave = new ENROLLMENT_System.TRControls.TRButtons();
             this.Sect_block = new System.Windows.Forms.ComboBox();
             this.section_GridView = new System.Windows.Forms.DataGridView();
             this.sec_yr = new System.Windows.Forms.ComboBox();
@@ -41,11 +44,17 @@ namespace ENROLLMENT_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUpdate = new ENROLLMENT_System.TRControls.TRButtons();
-            this.btnSave = new ENROLLMENT_System.TRControls.TRButtons();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sectidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.displaysectResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.section_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displaysectResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,7 +65,7 @@ namespace ENROLLMENT_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1337, 81);
+            this.panel1.Size = new System.Drawing.Size(1353, 81);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -77,6 +86,7 @@ namespace ENROLLMENT_System
             this.searchsect.Name = "searchsect";
             this.searchsect.Size = new System.Drawing.Size(568, 34);
             this.searchsect.TabIndex = 8;
+            this.searchsect.TextChanged += new System.EventHandler(this.searchsect_TextChanged);
             // 
             // label1
             // 
@@ -84,14 +94,14 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 44);
+            this.label1.Size = new System.Drawing.Size(361, 44);
             this.label1.TabIndex = 7;
             this.label1.Text = "MANAGE SECTION";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.Sectupdate);
+            this.panel2.Controls.Add(this.Sectsave);
             this.panel2.Controls.Add(this.Sect_block);
             this.panel2.Controls.Add(this.section_GridView);
             this.panel2.Controls.Add(this.sec_yr);
@@ -102,13 +112,62 @@ namespace ENROLLMENT_System
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1337, 617);
+            this.panel2.Size = new System.Drawing.Size(1353, 656);
             this.panel2.TabIndex = 1;
+            // 
+            // Sectupdate
+            // 
+            this.Sectupdate.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Sectupdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Sectupdate.BorderColor = System.Drawing.Color.Black;
+            this.Sectupdate.BorderRadius = 20;
+            this.Sectupdate.BorderSize = 1;
+            this.Sectupdate.FlatAppearance.BorderSize = 0;
+            this.Sectupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sectupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sectupdate.ForeColor = System.Drawing.Color.White;
+            this.Sectupdate.Location = new System.Drawing.Point(177, 351);
+            this.Sectupdate.Name = "Sectupdate";
+            this.Sectupdate.Size = new System.Drawing.Size(305, 88);
+            this.Sectupdate.TabIndex = 23;
+            this.Sectupdate.Text = "Update";
+            this.Sectupdate.TextColor = System.Drawing.Color.White;
+            this.Sectupdate.UseVisualStyleBackColor = false;
+            this.Sectupdate.Click += new System.EventHandler(this.Sectupdate_Click);
+            // 
+            // Sectsave
+            // 
+            this.Sectsave.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Sectsave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Sectsave.BorderColor = System.Drawing.Color.Black;
+            this.Sectsave.BorderRadius = 20;
+            this.Sectsave.BorderSize = 1;
+            this.Sectsave.FlatAppearance.BorderSize = 0;
+            this.Sectsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sectsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sectsave.ForeColor = System.Drawing.Color.White;
+            this.Sectsave.Location = new System.Drawing.Point(172, 257);
+            this.Sectsave.Name = "Sectsave";
+            this.Sectsave.Size = new System.Drawing.Size(310, 88);
+            this.Sectsave.TabIndex = 24;
+            this.Sectsave.Text = "Save";
+            this.Sectsave.TextColor = System.Drawing.Color.White;
+            this.Sectsave.UseVisualStyleBackColor = false;
+            this.Sectsave.Click += new System.EventHandler(this.Sectsave_Click);
             // 
             // Sect_block
             // 
             this.Sect_block.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sect_block.FormattingEnabled = true;
+            this.Sect_block.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "1",
+            "2",
+            "3",
+            "4"});
             this.Sect_block.Location = new System.Drawing.Point(172, 205);
             this.Sect_block.Name = "Sect_block";
             this.Sect_block.Size = new System.Drawing.Size(310, 28);
@@ -118,17 +177,32 @@ namespace ENROLLMENT_System
             // 
             this.section_GridView.AllowUserToAddRows = false;
             this.section_GridView.AllowUserToDeleteRows = false;
+            this.section_GridView.AutoGenerateColumns = false;
             this.section_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.section_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete,
+            this.sectidDataGridViewTextBoxColumn,
+            this.sectnameDataGridViewTextBoxColumn,
+            this.sectyearDataGridViewTextBoxColumn,
+            this.sectextDataGridViewTextBoxColumn});
+            this.section_GridView.DataSource = this.displaysectResultBindingSource;
             this.section_GridView.Location = new System.Drawing.Point(500, 46);
             this.section_GridView.Name = "section_GridView";
             this.section_GridView.ReadOnly = true;
             this.section_GridView.Size = new System.Drawing.Size(823, 524);
             this.section_GridView.TabIndex = 21;
+            this.section_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.section_GridView_CellContentClick);
             // 
             // sec_yr
             // 
             this.sec_yr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sec_yr.FormattingEnabled = true;
+            this.sec_yr.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.sec_yr.Location = new System.Drawing.Point(172, 125);
             this.sec_yr.Name = "sec_yr";
             this.sec_yr.Size = new System.Drawing.Size(310, 28);
@@ -173,50 +247,60 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 15;
             this.label4.Text = "Section Name";
             // 
-            // btnUpdate
+            // Edit
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnUpdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
-            this.btnUpdate.BorderRadius = 20;
-            this.btnUpdate.BorderSize = 1;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(292, 335);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(172, 88);
-            this.btnUpdate.TabIndex = 23;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.TextColor = System.Drawing.Color.White;
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // btnSave
+            // Delete
             // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderSize = 1;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(82, 335);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(177, 88);
-            this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextColor = System.Drawing.Color.White;
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // sectidDataGridViewTextBoxColumn
+            // 
+            this.sectidDataGridViewTextBoxColumn.DataPropertyName = "Sect_id";
+            this.sectidDataGridViewTextBoxColumn.HeaderText = "Sect_id";
+            this.sectidDataGridViewTextBoxColumn.Name = "sectidDataGridViewTextBoxColumn";
+            this.sectidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectnameDataGridViewTextBoxColumn
+            // 
+            this.sectnameDataGridViewTextBoxColumn.DataPropertyName = "Sect_name";
+            this.sectnameDataGridViewTextBoxColumn.HeaderText = "Sect_name";
+            this.sectnameDataGridViewTextBoxColumn.Name = "sectnameDataGridViewTextBoxColumn";
+            this.sectnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectyearDataGridViewTextBoxColumn
+            // 
+            this.sectyearDataGridViewTextBoxColumn.DataPropertyName = "Sect_year";
+            this.sectyearDataGridViewTextBoxColumn.HeaderText = "Sect_year";
+            this.sectyearDataGridViewTextBoxColumn.Name = "sectyearDataGridViewTextBoxColumn";
+            this.sectyearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectextDataGridViewTextBoxColumn
+            // 
+            this.sectextDataGridViewTextBoxColumn.DataPropertyName = "Sect_ext";
+            this.sectextDataGridViewTextBoxColumn.HeaderText = "Sect_ext";
+            this.sectextDataGridViewTextBoxColumn.Name = "sectextDataGridViewTextBoxColumn";
+            this.sectextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // displaysectResultBindingSource
+            // 
+            this.displaysectResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_sectResult);
             // 
             // dataEnt_Section
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(1337, 698);
+            this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -227,6 +311,7 @@ namespace ENROLLMENT_System
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.section_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displaysectResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,7 +330,14 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox Sect_block;
-        private TRControls.TRButtons btnUpdate;
-        private TRControls.TRButtons btnSave;
+        private TRControls.TRButtons Sectupdate;
+        private TRControls.TRButtons Sectsave;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectyearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sectextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource displaysectResultBindingSource;
     }
 }

@@ -29,6 +29,7 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.searchsub = new System.Windows.Forms.TextBox();
@@ -45,9 +46,18 @@ namespace ENROLLMENT_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.displaysubjResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.subidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subUnitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subject_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displaysubjResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,7 +68,7 @@ namespace ENROLLMENT_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1337, 100);
+            this.panel1.Size = new System.Drawing.Size(1353, 100);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -79,6 +89,7 @@ namespace ENROLLMENT_System
             this.searchsub.Name = "searchsub";
             this.searchsub.Size = new System.Drawing.Size(568, 34);
             this.searchsub.TabIndex = 5;
+            this.searchsub.TextChanged += new System.EventHandler(this.searchsub_TextChanged);
             // 
             // label1
             // 
@@ -86,7 +97,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 44);
+            this.label1.Size = new System.Drawing.Size(390, 44);
             this.label1.TabIndex = 4;
             this.label1.Text = "MANAGE SUBJECTS";
             // 
@@ -106,7 +117,7 @@ namespace ENROLLMENT_System
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1337, 598);
+            this.panel2.Size = new System.Drawing.Size(1353, 637);
             this.panel2.TabIndex = 1;
             // 
             // Subjupdate
@@ -120,13 +131,14 @@ namespace ENROLLMENT_System
             this.Subjupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subjupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Subjupdate.ForeColor = System.Drawing.Color.White;
-            this.Subjupdate.Location = new System.Drawing.Point(310, 311);
+            this.Subjupdate.Location = new System.Drawing.Point(172, 399);
             this.Subjupdate.Name = "Subjupdate";
-            this.Subjupdate.Size = new System.Drawing.Size(172, 84);
+            this.Subjupdate.Size = new System.Drawing.Size(310, 84);
             this.Subjupdate.TabIndex = 24;
             this.Subjupdate.Text = "Update";
             this.Subjupdate.TextColor = System.Drawing.Color.White;
             this.Subjupdate.UseVisualStyleBackColor = false;
+            this.Subjupdate.Click += new System.EventHandler(this.Subjupdate_Click);
             // 
             // Subjsave
             // 
@@ -139,13 +151,14 @@ namespace ENROLLMENT_System
             this.Subjsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Subjsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Subjsave.ForeColor = System.Drawing.Color.White;
-            this.Subjsave.Location = new System.Drawing.Point(117, 311);
+            this.Subjsave.Location = new System.Drawing.Point(172, 309);
             this.Subjsave.Name = "Subjsave";
-            this.Subjsave.Size = new System.Drawing.Size(172, 84);
+            this.Subjsave.Size = new System.Drawing.Size(310, 84);
             this.Subjsave.TabIndex = 24;
             this.Subjsave.Text = "Save";
             this.Subjsave.TextColor = System.Drawing.Color.White;
             this.Subjsave.UseVisualStyleBackColor = false;
+            this.Subjsave.Click += new System.EventHandler(this.Subjsave_Click);
             // 
             // subjDescrip
             // 
@@ -170,17 +183,31 @@ namespace ENROLLMENT_System
             // 
             this.subject_GridView.AllowUserToAddRows = false;
             this.subject_GridView.AllowUserToDeleteRows = false;
+            this.subject_GridView.AutoGenerateColumns = false;
             this.subject_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subject_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete,
+            this.subidDataGridViewTextBoxColumn,
+            this.subCodeDataGridViewTextBoxColumn,
+            this.subdescDataGridViewTextBoxColumn,
+            this.subsemDataGridViewTextBoxColumn,
+            this.subUnitsDataGridViewTextBoxColumn});
+            this.subject_GridView.DataSource = this.displaysubjResultBindingSource;
             this.subject_GridView.Location = new System.Drawing.Point(500, 37);
             this.subject_GridView.Name = "subject_GridView";
             this.subject_GridView.ReadOnly = true;
-            this.subject_GridView.Size = new System.Drawing.Size(823, 524);
+            this.subject_GridView.Size = new System.Drawing.Size(823, 549);
             this.subject_GridView.TabIndex = 21;
+            this.subject_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.subject_GridView_CellContentClick);
             // 
             // SubSem
             // 
             this.SubSem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubSem.FormattingEnabled = true;
+            this.SubSem.Items.AddRange(new object[] {
+            "1st Semester",
+            "2nd Semester"});
             this.SubSem.Location = new System.Drawing.Point(172, 165);
             this.SubSem.Name = "SubSem";
             this.SubSem.Size = new System.Drawing.Size(310, 28);
@@ -234,12 +261,67 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 15;
             this.label4.Text = "Subject Code";
             // 
+            // displaysubjResultBindingSource
+            // 
+            this.displaysubjResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_subjResult);
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // subidDataGridViewTextBoxColumn
+            // 
+            this.subidDataGridViewTextBoxColumn.DataPropertyName = "Sub_id";
+            this.subidDataGridViewTextBoxColumn.HeaderText = "Sub_id";
+            this.subidDataGridViewTextBoxColumn.Name = "subidDataGridViewTextBoxColumn";
+            this.subidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subCodeDataGridViewTextBoxColumn
+            // 
+            this.subCodeDataGridViewTextBoxColumn.DataPropertyName = "Sub_Code";
+            this.subCodeDataGridViewTextBoxColumn.HeaderText = "Sub_Code";
+            this.subCodeDataGridViewTextBoxColumn.Name = "subCodeDataGridViewTextBoxColumn";
+            this.subCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subdescDataGridViewTextBoxColumn
+            // 
+            this.subdescDataGridViewTextBoxColumn.DataPropertyName = "Sub_desc";
+            this.subdescDataGridViewTextBoxColumn.HeaderText = "Sub_desc";
+            this.subdescDataGridViewTextBoxColumn.Name = "subdescDataGridViewTextBoxColumn";
+            this.subdescDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subsemDataGridViewTextBoxColumn
+            // 
+            this.subsemDataGridViewTextBoxColumn.DataPropertyName = "Sub_sem";
+            this.subsemDataGridViewTextBoxColumn.HeaderText = "Sub_sem";
+            this.subsemDataGridViewTextBoxColumn.Name = "subsemDataGridViewTextBoxColumn";
+            this.subsemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subUnitsDataGridViewTextBoxColumn
+            // 
+            this.subUnitsDataGridViewTextBoxColumn.DataPropertyName = "Sub_Units";
+            this.subUnitsDataGridViewTextBoxColumn.HeaderText = "Sub_Units";
+            this.subUnitsDataGridViewTextBoxColumn.Name = "subUnitsDataGridViewTextBoxColumn";
+            this.subUnitsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // dataEnt_Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(1337, 698);
+            this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -250,6 +332,7 @@ namespace ENROLLMENT_System
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subject_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displaysubjResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +355,13 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label4;
         private TRControls.TRButtons Subjupdate;
         private TRControls.TRButtons Subjsave;
+        private System.Windows.Forms.BindingSource displaysubjResultBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subdescDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subsemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subUnitsDataGridViewTextBoxColumn;
     }
 }

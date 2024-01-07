@@ -115,11 +115,6 @@ namespace ENROLLMENT_System
             loadform(new dataEnt_Class());
         }
 
-        private void btnrecords_Click(object sender, EventArgs e)
-        {
-            loadform(new Records());
-        }
-
         private void btnProfile_Click(object sender, EventArgs e)
         {
             loadform(new Set_Profile());
@@ -128,6 +123,20 @@ namespace ENROLLMENT_System
         private void btn_ChangePass_Click(object sender, EventArgs e)
         {
             loadform(new Set_ChangePassword());
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to log out?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                login log = new login();
+                log.Show();
+            }
+        }
+        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
     
