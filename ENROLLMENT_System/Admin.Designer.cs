@@ -399,7 +399,7 @@ namespace ENROLLMENT_System
             this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainpanel.Location = new System.Drawing.Point(234, 0);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1353, 737);
+            this.mainpanel.Size = new System.Drawing.Size(1136, 737);
             this.mainpanel.TabIndex = 1;
             // 
             // dataEntryTimer_Tick
@@ -416,7 +416,7 @@ namespace ENROLLMENT_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1587, 737);
+            this.ClientSize = new System.Drawing.Size(1370, 737);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panelside);
             this.MaximizeBox = false;

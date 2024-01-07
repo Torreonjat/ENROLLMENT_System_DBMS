@@ -16,5 +16,6 @@ namespace ENROLLMENT_System
         {
             InitializeComponent();
         }
+
     }
 }

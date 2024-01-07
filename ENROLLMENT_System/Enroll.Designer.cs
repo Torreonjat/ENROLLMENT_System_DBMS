@@ -76,7 +76,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 44);
+            this.label1.Size = new System.Drawing.Size(357, 44);
             this.label1.TabIndex = 1;
             this.label1.Text = "ENROLL STUDENT";
             // 
@@ -323,6 +323,7 @@ namespace ENROLLMENT_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1337, 698);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

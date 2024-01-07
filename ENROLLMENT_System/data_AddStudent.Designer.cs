@@ -36,21 +36,16 @@ namespace ENROLLMENT_System
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Stud_year = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Stud_Prog = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Stud_Status = new System.Windows.Forms.ComboBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Stud_mname = new System.Windows.Forms.TextBox();
-            this.Stud_Fname = new System.Windows.Forms.TextBox();
-            this.Stud_lname = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Stud_GContact = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Stud_Guardianmname = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Stud_Guardianfname = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Stud_Guardianlname = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.Stud_address = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Stud_Bdate = new System.Windows.Forms.DateTimePicker();
@@ -61,17 +56,22 @@ namespace ENROLLMENT_System
             this.Stud_email = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Stud_Pnum = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.Stud_Guardianmname = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Stud_Guardianfname = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.Stud_Guardianlname = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.Stud_GContact = new System.Windows.Forms.TextBox();
-            this.add_studentBtn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Stud_mname = new System.Windows.Forms.TextBox();
+            this.Stud_Fname = new System.Windows.Forms.TextBox();
+            this.Stud_lname = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Stud_year = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Stud_Prog = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Stud_Status = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.trButtons1 = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -95,7 +95,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 44);
+            this.label1.Size = new System.Drawing.Size(318, 44);
             this.label1.TabIndex = 15;
             this.label1.Text = "STUDENT FORM";
             // 
@@ -117,7 +117,7 @@ namespace ENROLLMENT_System
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.add_studentBtn);
+            this.panel4.Controls.Add(this.trButtons1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(132, 592);
             this.panel4.Name = "panel4";
@@ -164,168 +164,101 @@ namespace ENROLLMENT_System
             this.panel9.Size = new System.Drawing.Size(1057, 333);
             this.panel9.TabIndex = 3;
             // 
-            // panel8
+            // label18
             // 
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.Stud_mname);
-            this.panel8.Controls.Add(this.Stud_Fname);
-            this.panel8.Controls.Add(this.Stud_lname);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 91);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1057, 100);
-            this.panel8.TabIndex = 2;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(551, 240);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(93, 20);
+            this.label18.TabIndex = 87;
+            this.label18.Text = "Contact No.";
             // 
-            // panel7
+            // Stud_GContact
             // 
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.Stud_year);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.Stud_Prog);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.Stud_Status);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 34);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1057, 57);
-            this.panel7.TabIndex = 1;
+            this.Stud_GContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_GContact.Location = new System.Drawing.Point(665, 232);
+            this.Stud_GContact.Multiline = true;
+            this.Stud_GContact.Name = "Stud_GContact";
+            this.Stud_GContact.Size = new System.Drawing.Size(363, 34);
+            this.Stud_GContact.TabIndex = 86;
             // 
-            // label3
+            // label15
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(699, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Year Level";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(551, 185);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 20);
+            this.label15.TabIndex = 85;
+            this.label15.Text = "Middle Initial";
             // 
-            // Stud_year
+            // Stud_Guardianmname
             // 
-            this.Stud_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_year.FormattingEnabled = true;
-            this.Stud_year.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Others"});
-            this.Stud_year.Location = new System.Drawing.Point(789, 23);
-            this.Stud_year.Name = "Stud_year";
-            this.Stud_year.Size = new System.Drawing.Size(253, 28);
-            this.Stud_year.TabIndex = 41;
+            this.Stud_Guardianmname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Guardianmname.Location = new System.Drawing.Point(665, 177);
+            this.Stud_Guardianmname.Multiline = true;
+            this.Stud_Guardianmname.Name = "Stud_Guardianmname";
+            this.Stud_Guardianmname.Size = new System.Drawing.Size(363, 34);
+            this.Stud_Guardianmname.TabIndex = 84;
             // 
-            // label2
+            // label16
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(359, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Program";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(551, 127);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 20);
+            this.label16.TabIndex = 83;
+            this.label16.Text = "First Name";
             // 
-            // Stud_Prog
+            // Stud_Guardianfname
             // 
-            this.Stud_Prog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Prog.FormattingEnabled = true;
-            this.Stud_Prog.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Others"});
-            this.Stud_Prog.Location = new System.Drawing.Point(434, 23);
-            this.Stud_Prog.Name = "Stud_Prog";
-            this.Stud_Prog.Size = new System.Drawing.Size(253, 28);
-            this.Stud_Prog.TabIndex = 39;
+            this.Stud_Guardianfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Guardianfname.Location = new System.Drawing.Point(665, 119);
+            this.Stud_Guardianfname.Multiline = true;
+            this.Stud_Guardianfname.Name = "Stud_Guardianfname";
+            this.Stud_Guardianfname.Size = new System.Drawing.Size(363, 34);
+            this.Stud_Guardianfname.TabIndex = 82;
             // 
-            // label5
+            // label17
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Status";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(551, 63);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 20);
+            this.label17.TabIndex = 81;
+            this.label17.Text = "Last Name";
             // 
-            // Stud_Status
+            // Stud_Guardianlname
             // 
-            this.Stud_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Status.FormattingEnabled = true;
-            this.Stud_Status.Items.AddRange(new object[] {
-            "New Student",
-            "Old Student",
-            "Transferee",
-            "Returnee"});
-            this.Stud_Status.Location = new System.Drawing.Point(81, 23);
-            this.Stud_Status.Name = "Stud_Status";
-            this.Stud_Status.Size = new System.Drawing.Size(253, 28);
-            this.Stud_Status.TabIndex = 37;
+            this.Stud_Guardianlname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Guardianlname.Location = new System.Drawing.Point(665, 55);
+            this.Stud_Guardianlname.Multiline = true;
+            this.Stud_Guardianlname.Name = "Stud_Guardianlname";
+            this.Stud_Guardianlname.Size = new System.Drawing.Size(363, 34);
+            this.Stud_Guardianlname.TabIndex = 80;
             // 
-            // panel6
+            // label14
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1057, 34);
-            this.panel6.TabIndex = 0;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(550, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(151, 20);
+            this.label14.TabIndex = 79;
+            this.label14.Text = "GUARDIAN INFO";
             // 
-            // label4
+            // label13
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(771, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Middle name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(502, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "First name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(215, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Last name";
-            // 
-            // Stud_mname
-            // 
-            this.Stud_mname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_mname.Location = new System.Drawing.Point(665, 22);
-            this.Stud_mname.Multiline = true;
-            this.Stud_mname.Name = "Stud_mname";
-            this.Stud_mname.Size = new System.Drawing.Size(262, 34);
-            this.Stud_mname.TabIndex = 28;
-            // 
-            // Stud_Fname
-            // 
-            this.Stud_Fname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Fname.Location = new System.Drawing.Point(397, 22);
-            this.Stud_Fname.Multiline = true;
-            this.Stud_Fname.Name = "Stud_Fname";
-            this.Stud_Fname.Size = new System.Drawing.Size(262, 34);
-            this.Stud_Fname.TabIndex = 27;
-            // 
-            // Stud_lname
-            // 
-            this.Stud_lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_lname.Location = new System.Drawing.Point(129, 22);
-            this.Stud_lname.Multiline = true;
-            this.Stud_lname.Name = "Stud_lname";
-            this.Stud_lname.Size = new System.Drawing.Size(262, 34);
-            this.Stud_lname.TabIndex = 26;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(24, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(138, 20);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "STUDENT INFO";
             // 
             // Stud_address
             // 
@@ -424,116 +357,193 @@ namespace ENROLLMENT_System
             this.Stud_Pnum.Size = new System.Drawing.Size(363, 34);
             this.Stud_Pnum.TabIndex = 68;
             // 
-            // label13
+            // panel8
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(198, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(193, 29);
-            this.label13.TabIndex = 78;
-            this.label13.Text = "STUDENT INFO";
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.Stud_mname);
+            this.panel8.Controls.Add(this.Stud_Fname);
+            this.panel8.Controls.Add(this.Stud_lname);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 91);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1057, 100);
+            this.panel8.TabIndex = 2;
             // 
-            // label14
+            // label4
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(677, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(200, 29);
-            this.label14.TabIndex = 79;
-            this.label14.Text = "GUARDIAN INFO";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(771, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Middle name";
             // 
-            // label15
+            // label6
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(551, 185);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 20);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Middle Initial";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(502, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 20);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "First name";
             // 
-            // Stud_Guardianmname
+            // label7
             // 
-            this.Stud_Guardianmname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Guardianmname.Location = new System.Drawing.Point(665, 177);
-            this.Stud_Guardianmname.Multiline = true;
-            this.Stud_Guardianmname.Name = "Stud_Guardianmname";
-            this.Stud_Guardianmname.Size = new System.Drawing.Size(363, 34);
-            this.Stud_Guardianmname.TabIndex = 84;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(215, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Last name";
             // 
-            // label16
+            // Stud_mname
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(551, 127);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 20);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "First Name";
+            this.Stud_mname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_mname.Location = new System.Drawing.Point(665, 22);
+            this.Stud_mname.Multiline = true;
+            this.Stud_mname.Name = "Stud_mname";
+            this.Stud_mname.Size = new System.Drawing.Size(262, 34);
+            this.Stud_mname.TabIndex = 28;
             // 
-            // Stud_Guardianfname
+            // Stud_Fname
             // 
-            this.Stud_Guardianfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Guardianfname.Location = new System.Drawing.Point(665, 119);
-            this.Stud_Guardianfname.Multiline = true;
-            this.Stud_Guardianfname.Name = "Stud_Guardianfname";
-            this.Stud_Guardianfname.Size = new System.Drawing.Size(363, 34);
-            this.Stud_Guardianfname.TabIndex = 82;
+            this.Stud_Fname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Fname.Location = new System.Drawing.Point(397, 22);
+            this.Stud_Fname.Multiline = true;
+            this.Stud_Fname.Name = "Stud_Fname";
+            this.Stud_Fname.Size = new System.Drawing.Size(262, 34);
+            this.Stud_Fname.TabIndex = 27;
             // 
-            // label17
+            // Stud_lname
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(551, 63);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 20);
-            this.label17.TabIndex = 81;
-            this.label17.Text = "Last Name";
+            this.Stud_lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_lname.Location = new System.Drawing.Point(129, 22);
+            this.Stud_lname.Multiline = true;
+            this.Stud_lname.Name = "Stud_lname";
+            this.Stud_lname.Size = new System.Drawing.Size(262, 34);
+            this.Stud_lname.TabIndex = 26;
             // 
-            // Stud_Guardianlname
+            // panel7
             // 
-            this.Stud_Guardianlname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_Guardianlname.Location = new System.Drawing.Point(665, 55);
-            this.Stud_Guardianlname.Multiline = true;
-            this.Stud_Guardianlname.Name = "Stud_Guardianlname";
-            this.Stud_Guardianlname.Size = new System.Drawing.Size(363, 34);
-            this.Stud_Guardianlname.TabIndex = 80;
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.Stud_year);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.Stud_Prog);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.Stud_Status);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 34);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1057, 57);
+            this.panel7.TabIndex = 1;
             // 
-            // label18
+            // label3
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(551, 240);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 20);
-            this.label18.TabIndex = 87;
-            this.label18.Text = "Contact No.";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(699, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Year Level";
             // 
-            // Stud_GContact
+            // Stud_year
             // 
-            this.Stud_GContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stud_GContact.Location = new System.Drawing.Point(665, 232);
-            this.Stud_GContact.Multiline = true;
-            this.Stud_GContact.Name = "Stud_GContact";
-            this.Stud_GContact.Size = new System.Drawing.Size(363, 34);
-            this.Stud_GContact.TabIndex = 86;
+            this.Stud_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_year.FormattingEnabled = true;
+            this.Stud_year.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Others"});
+            this.Stud_year.Location = new System.Drawing.Point(789, 23);
+            this.Stud_year.Name = "Stud_year";
+            this.Stud_year.Size = new System.Drawing.Size(253, 28);
+            this.Stud_year.TabIndex = 41;
             // 
-            // add_studentBtn
+            // label2
             // 
-            this.add_studentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_studentBtn.Location = new System.Drawing.Point(665, 8);
-            this.add_studentBtn.Name = "add_studentBtn";
-            this.add_studentBtn.Size = new System.Drawing.Size(363, 56);
-            this.add_studentBtn.TabIndex = 88;
-            this.add_studentBtn.Text = "Submit";
-            this.add_studentBtn.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(359, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Program";
+            // 
+            // Stud_Prog
+            // 
+            this.Stud_Prog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Prog.FormattingEnabled = true;
+            this.Stud_Prog.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Others"});
+            this.Stud_Prog.Location = new System.Drawing.Point(434, 23);
+            this.Stud_Prog.Name = "Stud_Prog";
+            this.Stud_Prog.Size = new System.Drawing.Size(253, 28);
+            this.Stud_Prog.TabIndex = 39;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Status";
+            // 
+            // Stud_Status
+            // 
+            this.Stud_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stud_Status.FormattingEnabled = true;
+            this.Stud_Status.Items.AddRange(new object[] {
+            "New Student",
+            "Old Student",
+            "Transferee",
+            "Returnee"});
+            this.Stud_Status.Location = new System.Drawing.Point(81, 23);
+            this.Stud_Status.Name = "Stud_Status";
+            this.Stud_Status.Size = new System.Drawing.Size(253, 28);
+            this.Stud_Status.TabIndex = 37;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1057, 34);
+            this.panel6.TabIndex = 0;
+            // 
+            // trButtons1
+            // 
+            this.trButtons1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.trButtons1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.trButtons1.BorderColor = System.Drawing.Color.Black;
+            this.trButtons1.BorderRadius = 20;
+            this.trButtons1.BorderSize = 1;
+            this.trButtons1.FlatAppearance.BorderSize = 0;
+            this.trButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.trButtons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trButtons1.ForeColor = System.Drawing.Color.Black;
+            this.trButtons1.Location = new System.Drawing.Point(738, 4);
+            this.trButtons1.Name = "trButtons1";
+            this.trButtons1.Size = new System.Drawing.Size(290, 60);
+            this.trButtons1.TabIndex = 0;
+            this.trButtons1.Text = "Submit";
+            this.trButtons1.TextColor = System.Drawing.Color.Black;
+            this.trButtons1.UseVisualStyleBackColor = false;
             // 
             // data_AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1321, 659);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -601,6 +611,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.TextBox Stud_Guardianfname;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox Stud_Guardianlname;
-        private System.Windows.Forms.Button add_studentBtn;
+        private TRControls.TRButtons trButtons1;
     }
 }

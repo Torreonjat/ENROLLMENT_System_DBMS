@@ -84,7 +84,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 44);
+            this.label1.Size = new System.Drawing.Size(257, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
             // 
@@ -107,9 +107,9 @@ namespace ENROLLMENT_System
             this.panel7.Controls.Add(this.lbtotClass);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.label13);
-            this.panel7.Location = new System.Drawing.Point(1020, 36);
+            this.panel7.Location = new System.Drawing.Point(1020, 39);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(313, 216);
+            this.panel7.Size = new System.Drawing.Size(313, 213);
             this.panel7.TabIndex = 1;
             // 
             // pictureBox4
@@ -129,7 +129,7 @@ namespace ENROLLMENT_System
             this.lbtotClass.ForeColor = System.Drawing.SystemColors.Control;
             this.lbtotClass.Location = new System.Drawing.Point(14, 65);
             this.lbtotClass.Name = "lbtotClass";
-            this.lbtotClass.Size = new System.Drawing.Size(147, 76);
+            this.lbtotClass.Size = new System.Drawing.Size(146, 76);
             this.lbtotClass.TabIndex = 6;
             this.lbtotClass.Text = "###";
             // 
@@ -162,9 +162,9 @@ namespace ENROLLMENT_System
             this.panel6.Controls.Add(this.lbtotenr);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(688, 36);
+            this.panel6.Location = new System.Drawing.Point(688, 39);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(313, 216);
+            this.panel6.Size = new System.Drawing.Size(313, 213);
             this.panel6.TabIndex = 1;
             // 
             // pictureBox3
@@ -184,7 +184,7 @@ namespace ENROLLMENT_System
             this.lbtotenr.ForeColor = System.Drawing.SystemColors.Control;
             this.lbtotenr.Location = new System.Drawing.Point(14, 65);
             this.lbtotenr.Name = "lbtotenr";
-            this.lbtotenr.Size = new System.Drawing.Size(147, 76);
+            this.lbtotenr.Size = new System.Drawing.Size(146, 76);
             this.lbtotenr.TabIndex = 6;
             this.lbtotenr.Text = "###";
             // 
@@ -217,9 +217,9 @@ namespace ENROLLMENT_System
             this.panel5.Controls.Add(this.lbTotEnrolled);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(356, 36);
+            this.panel5.Location = new System.Drawing.Point(356, 39);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(313, 216);
+            this.panel5.Size = new System.Drawing.Size(313, 213);
             this.panel5.TabIndex = 1;
             // 
             // pictureBox2
@@ -239,7 +239,7 @@ namespace ENROLLMENT_System
             this.lbTotEnrolled.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTotEnrolled.Location = new System.Drawing.Point(14, 65);
             this.lbTotEnrolled.Name = "lbTotEnrolled";
-            this.lbTotEnrolled.Size = new System.Drawing.Size(147, 76);
+            this.lbTotEnrolled.Size = new System.Drawing.Size(146, 76);
             this.lbTotEnrolled.TabIndex = 6;
             this.lbTotEnrolled.Text = "###";
             // 
@@ -272,9 +272,9 @@ namespace ENROLLMENT_System
             this.panel4.Controls.Add(this.lbTotalStud);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(24, 36);
+            this.panel4.Location = new System.Drawing.Point(24, 39);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(313, 216);
+            this.panel4.Size = new System.Drawing.Size(313, 213);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox1
@@ -294,7 +294,7 @@ namespace ENROLLMENT_System
             this.lbTotalStud.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTotalStud.Location = new System.Drawing.Point(12, 67);
             this.lbTotalStud.Name = "lbTotalStud";
-            this.lbTotalStud.Size = new System.Drawing.Size(147, 76);
+            this.lbTotalStud.Size = new System.Drawing.Size(146, 76);
             this.lbTotalStud.TabIndex = 2;
             this.lbTotalStud.Text = "###";
             // 

@@ -150,6 +150,9 @@
     <Compile Include="Set_Profile.Designer.cs">
       <DependentUpon>Set_Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRControls\TRButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +252,7 @@
     <Content Include="IMAGES\tools.png" />
     <Content Include="IMAGES\user-gear.png" />
     <Content Include="IMAGES\user.png" />
+    <Content Include="IMAGES\[removal.ai]_d6cab080-2394-4c3c-9be6-0e1909b03e26-image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
