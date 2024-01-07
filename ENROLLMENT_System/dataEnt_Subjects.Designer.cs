@@ -34,6 +34,8 @@ namespace ENROLLMENT_System
             this.searchsub = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Subjupdate = new ENROLLMENT_System.TRControls.TRButtons();
+            this.Subjsave = new ENROLLMENT_System.TRControls.TRButtons();
             this.subjDescrip = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.subject_GridView = new System.Windows.Forms.DataGridView();
@@ -43,8 +45,6 @@ namespace ENROLLMENT_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Subjupdate = new System.Windows.Forms.Button();
-            this.Subjsave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subject_GridView)).BeginInit();
@@ -86,12 +86,14 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 44);
+            this.label1.Size = new System.Drawing.Size(389, 44);
             this.label1.TabIndex = 4;
             this.label1.Text = "MANAGE SUBJECTS";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Subjupdate);
+            this.panel2.Controls.Add(this.Subjsave);
             this.panel2.Controls.Add(this.subjDescrip);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.subject_GridView);
@@ -101,13 +103,49 @@ namespace ENROLLMENT_System
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.Subjupdate);
-            this.panel2.Controls.Add(this.Subjsave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1337, 598);
             this.panel2.TabIndex = 1;
+            // 
+            // Subjupdate
+            // 
+            this.Subjupdate.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Subjupdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Subjupdate.BorderColor = System.Drawing.Color.Black;
+            this.Subjupdate.BorderRadius = 20;
+            this.Subjupdate.BorderSize = 1;
+            this.Subjupdate.FlatAppearance.BorderSize = 0;
+            this.Subjupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Subjupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subjupdate.ForeColor = System.Drawing.Color.White;
+            this.Subjupdate.Location = new System.Drawing.Point(310, 311);
+            this.Subjupdate.Name = "Subjupdate";
+            this.Subjupdate.Size = new System.Drawing.Size(172, 84);
+            this.Subjupdate.TabIndex = 24;
+            this.Subjupdate.Text = "Update";
+            this.Subjupdate.TextColor = System.Drawing.Color.White;
+            this.Subjupdate.UseVisualStyleBackColor = false;
+            // 
+            // Subjsave
+            // 
+            this.Subjsave.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Subjsave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Subjsave.BorderColor = System.Drawing.Color.Black;
+            this.Subjsave.BorderRadius = 20;
+            this.Subjsave.BorderSize = 1;
+            this.Subjsave.FlatAppearance.BorderSize = 0;
+            this.Subjsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Subjsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subjsave.ForeColor = System.Drawing.Color.White;
+            this.Subjsave.Location = new System.Drawing.Point(117, 311);
+            this.Subjsave.Name = "Subjsave";
+            this.Subjsave.Size = new System.Drawing.Size(172, 84);
+            this.Subjsave.TabIndex = 24;
+            this.Subjsave.Text = "Save";
+            this.Subjsave.TextColor = System.Drawing.Color.White;
+            this.Subjsave.UseVisualStyleBackColor = false;
             // 
             // subjDescrip
             // 
@@ -196,30 +234,11 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 15;
             this.label4.Text = "Subject Code";
             // 
-            // Subjupdate
-            // 
-            this.Subjupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subjupdate.Location = new System.Drawing.Point(344, 372);
-            this.Subjupdate.Name = "Subjupdate";
-            this.Subjupdate.Size = new System.Drawing.Size(138, 65);
-            this.Subjupdate.TabIndex = 14;
-            this.Subjupdate.Text = "Update";
-            this.Subjupdate.UseVisualStyleBackColor = true;
-            // 
-            // Subjsave
-            // 
-            this.Subjsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subjsave.Location = new System.Drawing.Point(172, 372);
-            this.Subjsave.Name = "Subjsave";
-            this.Subjsave.Size = new System.Drawing.Size(138, 65);
-            this.Subjsave.TabIndex = 13;
-            this.Subjsave.Text = "Save";
-            this.Subjsave.UseVisualStyleBackColor = true;
-            // 
             // dataEnt_Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1337, 698);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -251,7 +270,7 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Subjupdate;
-        private System.Windows.Forms.Button Subjsave;
+        private TRControls.TRButtons Subjupdate;
+        private TRControls.TRButtons Subjsave;
     }
 }

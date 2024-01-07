@@ -41,8 +41,8 @@ namespace ENROLLMENT_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Sectupdate = new System.Windows.Forms.Button();
-            this.Sectsave = new System.Windows.Forms.Button();
+            this.btnUpdate = new ENROLLMENT_System.TRControls.TRButtons();
+            this.btnSave = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.section_GridView)).BeginInit();
@@ -84,12 +84,14 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 44);
+            this.label1.Size = new System.Drawing.Size(360, 44);
             this.label1.TabIndex = 7;
             this.label1.Text = "MANAGE SECTION";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.Sect_block);
             this.panel2.Controls.Add(this.section_GridView);
             this.panel2.Controls.Add(this.sec_yr);
@@ -97,8 +99,6 @@ namespace ENROLLMENT_System
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.Sectupdate);
-            this.panel2.Controls.Add(this.Sectsave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 81);
             this.panel2.Name = "panel2";
@@ -173,30 +173,49 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 15;
             this.label4.Text = "Section Name";
             // 
-            // Sectupdate
+            // btnUpdate
             // 
-            this.Sectupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sectupdate.Location = new System.Drawing.Point(344, 381);
-            this.Sectupdate.Name = "Sectupdate";
-            this.Sectupdate.Size = new System.Drawing.Size(138, 65);
-            this.Sectupdate.TabIndex = 14;
-            this.Sectupdate.Text = "Update";
-            this.Sectupdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnUpdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderSize = 1;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(292, 335);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(172, 88);
+            this.btnUpdate.TabIndex = 23;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextColor = System.Drawing.Color.White;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // Sectsave
+            // btnSave
             // 
-            this.Sectsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sectsave.Location = new System.Drawing.Point(172, 381);
-            this.Sectsave.Name = "Sectsave";
-            this.Sectsave.Size = new System.Drawing.Size(138, 65);
-            this.Sectsave.TabIndex = 13;
-            this.Sectsave.Text = "Save";
-            this.Sectsave.UseVisualStyleBackColor = true;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(82, 335);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(177, 88);
+            this.btnSave.TabIndex = 24;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // dataEnt_Section
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1337, 698);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -225,8 +244,8 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Sectupdate;
-        private System.Windows.Forms.Button Sectsave;
         private System.Windows.Forms.ComboBox Sect_block;
+        private TRControls.TRButtons btnUpdate;
+        private TRControls.TRButtons btnSave;
     }
 }

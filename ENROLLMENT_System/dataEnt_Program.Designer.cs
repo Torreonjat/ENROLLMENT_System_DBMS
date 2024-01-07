@@ -41,8 +41,8 @@ namespace ENROLLMENT_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Progupdate = new System.Windows.Forms.Button();
-            this.Progsave = new System.Windows.Forms.Button();
+            this.btnSave = new ENROLLMENT_System.TRControls.TRButtons();
+            this.btnUpdate = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Prog_GridView)).BeginInit();
@@ -84,12 +84,14 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 44);
+            this.label1.Size = new System.Drawing.Size(389, 44);
             this.label1.TabIndex = 1;
             this.label1.Text = "MANAGE PROGRAM";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.Prog_GridView);
             this.panel2.Controls.Add(this.prog_type);
             this.panel2.Controls.Add(this.Prog_descripbox);
@@ -97,8 +99,6 @@ namespace ENROLLMENT_System
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.Progupdate);
-            this.panel2.Controls.Add(this.Progsave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 109);
             this.panel2.Name = "panel2";
@@ -173,30 +173,49 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 5;
             this.label4.Text = "Program Name";
             // 
-            // Progupdate
+            // btnSave
             // 
-            this.Progupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Progupdate.Location = new System.Drawing.Point(346, 388);
-            this.Progupdate.Name = "Progupdate";
-            this.Progupdate.Size = new System.Drawing.Size(138, 65);
-            this.Progupdate.TabIndex = 4;
-            this.Progupdate.Text = "Update";
-            this.Progupdate.UseVisualStyleBackColor = true;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSave.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(82, 386);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(177, 88);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextColor = System.Drawing.Color.White;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // Progsave
+            // btnUpdate
             // 
-            this.Progsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Progsave.Location = new System.Drawing.Point(174, 388);
-            this.Progsave.Name = "Progsave";
-            this.Progsave.Size = new System.Drawing.Size(138, 65);
-            this.Progsave.TabIndex = 3;
-            this.Progsave.Text = "Save";
-            this.Progsave.UseVisualStyleBackColor = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnUpdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderSize = 1;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(292, 386);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(172, 88);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextColor = System.Drawing.Color.White;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // dataEnt_Program
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1337, 698);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -218,8 +237,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchtb;
-        private System.Windows.Forms.Button Progupdate;
-        private System.Windows.Forms.Button Progsave;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Prog_descripbox;
         private System.Windows.Forms.TextBox Prog_namebox;
@@ -228,5 +245,7 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView Prog_GridView;
         private System.Windows.Forms.ComboBox prog_type;
+        private TRControls.TRButtons btnUpdate;
+        private TRControls.TRButtons btnSave;
     }
 }
