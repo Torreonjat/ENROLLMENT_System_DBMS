@@ -29,10 +29,13 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.reg_usertype = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.conP = new System.Windows.Forms.Button();
+            this.showP = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSignup = new ENROLLMENT_System.TRControls.TRButtons();
             this.reg_Contact = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.reg_ConPass = new System.Windows.Forms.TextBox();
@@ -49,9 +52,6 @@ namespace ENROLLMENT_System
             this.label1 = new System.Windows.Forms.Label();
             this.pbCapture = new System.Windows.Forms.PictureBox();
             this.pbCamera = new System.Windows.Forms.PictureBox();
-            this.btnSignup = new ENROLLMENT_System.TRControls.TRButtons();
-            this.btncamera = new ENROLLMENT_System.TRControls.TRButtons();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).BeginInit();
@@ -68,11 +68,10 @@ namespace ENROLLMENT_System
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.conP);
+            this.panel1.Controls.Add(this.showP);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.btncamera);
             this.panel1.Controls.Add(this.btnSignup);
-            this.panel1.Controls.Add(this.reg_usertype);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.reg_Contact);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.reg_ConPass);
@@ -94,27 +93,58 @@ namespace ENROLLMENT_System
             this.panel1.Size = new System.Drawing.Size(907, 579);
             this.panel1.TabIndex = 2;
             // 
-            // reg_usertype
+            // conP
             // 
-            this.reg_usertype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reg_usertype.FormattingEnabled = true;
-            this.reg_usertype.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
-            this.reg_usertype.Location = new System.Drawing.Point(505, 102);
-            this.reg_usertype.Name = "reg_usertype";
-            this.reg_usertype.Size = new System.Drawing.Size(339, 28);
-            this.reg_usertype.TabIndex = 48;
+            this.conP.FlatAppearance.BorderSize = 0;
+            this.conP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.conP.Image = ((System.Drawing.Image)(resources.GetObject("conP.Image")));
+            this.conP.Location = new System.Drawing.Point(851, 368);
+            this.conP.Name = "conP";
+            this.conP.Size = new System.Drawing.Size(44, 38);
+            this.conP.TabIndex = 53;
+            this.conP.UseVisualStyleBackColor = true;
+            this.conP.Click += new System.EventHandler(this.conP_Click);
             // 
-            // label8
+            // showP
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(356, 110);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 20);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Type of User";
+            this.showP.FlatAppearance.BorderSize = 0;
+            this.showP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showP.Image = ((System.Drawing.Image)(resources.GetObject("showP.Image")));
+            this.showP.Location = new System.Drawing.Point(851, 313);
+            this.showP.Name = "showP";
+            this.showP.Size = new System.Drawing.Size(44, 38);
+            this.showP.TabIndex = 52;
+            this.showP.UseVisualStyleBackColor = true;
+            this.showP.Click += new System.EventHandler(this.showP_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 344);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(179, 13);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Press the button to open the camera\r\n";
+            // 
+            // btnSignup
+            // 
+            this.btnSignup.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSignup.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSignup.BorderColor = System.Drawing.Color.Black;
+            this.btnSignup.BorderRadius = 20;
+            this.btnSignup.BorderSize = 1;
+            this.btnSignup.FlatAppearance.BorderSize = 0;
+            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignup.ForeColor = System.Drawing.Color.White;
+            this.btnSignup.Location = new System.Drawing.Point(403, 485);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(441, 82);
+            this.btnSignup.TabIndex = 49;
+            this.btnSignup.Text = "Sign Up";
+            this.btnSignup.TextColor = System.Drawing.Color.White;
+            this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // reg_Contact
             // 
@@ -245,13 +275,13 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(288, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 44);
+            this.label1.Size = new System.Drawing.Size(334, 44);
             this.label1.TabIndex = 11;
             this.label1.Text = "REGISTER FORM";
             // 
             // pbCapture
             // 
-            this.pbCapture.Location = new System.Drawing.Point(183, 204);
+            this.pbCapture.Location = new System.Drawing.Point(96, 434);
             this.pbCapture.Name = "pbCapture";
             this.pbCapture.Size = new System.Drawing.Size(131, 133);
             this.pbCapture.TabIndex = 1;
@@ -264,53 +294,6 @@ namespace ENROLLMENT_System
             this.pbCamera.Size = new System.Drawing.Size(291, 230);
             this.pbCamera.TabIndex = 0;
             this.pbCamera.TabStop = false;
-            // 
-            // btnSignup
-            // 
-            this.btnSignup.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSignup.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSignup.BorderColor = System.Drawing.Color.Black;
-            this.btnSignup.BorderRadius = 20;
-            this.btnSignup.BorderSize = 1;
-            this.btnSignup.FlatAppearance.BorderSize = 0;
-            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.Location = new System.Drawing.Point(403, 485);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(441, 82);
-            this.btnSignup.TabIndex = 49;
-            this.btnSignup.Text = "Sign Up";
-            this.btnSignup.TextColor = System.Drawing.Color.White;
-            this.btnSignup.UseVisualStyleBackColor = false;
-            // 
-            // btncamera
-            // 
-            this.btncamera.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btncamera.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btncamera.BorderColor = System.Drawing.Color.Black;
-            this.btncamera.BorderRadius = 20;
-            this.btncamera.BorderSize = 1;
-            this.btncamera.FlatAppearance.BorderSize = 0;
-            this.btncamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncamera.ForeColor = System.Drawing.Color.White;
-            this.btncamera.Location = new System.Drawing.Point(107, 366);
-            this.btncamera.Name = "btncamera";
-            this.btncamera.Size = new System.Drawing.Size(150, 49);
-            this.btncamera.TabIndex = 50;
-            this.btncamera.Text = "Camera";
-            this.btncamera.TextColor = System.Drawing.Color.White;
-            this.btncamera.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 344);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(179, 13);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Press the button to open the camera\r\n";
             // 
             // Register
             // 
@@ -340,7 +323,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.PictureBox pbCamera;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox reg_Contact;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox reg_ConPass;
@@ -353,9 +335,9 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox reg_Fname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox reg_usertype;
         private TRControls.TRButtons btnSignup;
         private System.Windows.Forms.Label label9;
-        private TRControls.TRButtons btncamera;
+        private System.Windows.Forms.Button conP;
+        private System.Windows.Forms.Button showP;
     }
 }

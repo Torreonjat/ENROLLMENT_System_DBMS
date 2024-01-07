@@ -29,13 +29,12 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.trButtons1 = new ENROLLMENT_System.TRControls.TRButtons();
             this.label5 = new System.Windows.Forms.Label();
             this.prof_searchbar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.trButtons2 = new ENROLLMENT_System.TRControls.TRButtons();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,42 +53,38 @@ namespace ENROLLMENT_System
             this.profLname = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Prof_GridView = new System.Windows.Forms.DataGridView();
+            this.displayprofResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Update = new ENROLLMENT_System.TRControls.TRButtons();
+            this.createNew = new ENROLLMENT_System.TRControls.TRButtons();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.profidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profLnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profMnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profContactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profGenderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profBdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profAddrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Prof_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayprofResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.trButtons1);
+            this.panel1.Controls.Add(this.createNew);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.prof_searchbar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1337, 80);
+            this.panel1.Size = new System.Drawing.Size(1353, 80);
             this.panel1.TabIndex = 0;
-            // 
-            // trButtons1
-            // 
-            this.trButtons1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BorderColor = System.Drawing.Color.Black;
-            this.trButtons1.BorderRadius = 20;
-            this.trButtons1.BorderSize = 1;
-            this.trButtons1.FlatAppearance.BorderSize = 0;
-            this.trButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons1.ForeColor = System.Drawing.Color.White;
-            this.trButtons1.Location = new System.Drawing.Point(1149, 16);
-            this.trButtons1.Name = "trButtons1";
-            this.trButtons1.Size = new System.Drawing.Size(176, 61);
-            this.trButtons1.TabIndex = 13;
-            this.trButtons1.Text = "CREATE NEW";
-            this.trButtons1.TextColor = System.Drawing.Color.White;
-            this.trButtons1.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -109,6 +104,7 @@ namespace ENROLLMENT_System
             this.prof_searchbar.Name = "prof_searchbar";
             this.prof_searchbar.Size = new System.Drawing.Size(568, 34);
             this.prof_searchbar.TabIndex = 11;
+            this.prof_searchbar.TextChanged += new System.EventHandler(this.prof_searchbar_TextChanged_1);
             // 
             // label1
             // 
@@ -116,13 +112,13 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(46, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 44);
+            this.label1.Size = new System.Drawing.Size(288, 44);
             this.label1.TabIndex = 10;
             this.label1.Text = "TEACHER LIST";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.trButtons2);
+            this.panel2.Controls.Add(this.Update);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -142,27 +138,8 @@ namespace ENROLLMENT_System
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1337, 249);
+            this.panel2.Size = new System.Drawing.Size(1353, 249);
             this.panel2.TabIndex = 1;
-            // 
-            // trButtons2
-            // 
-            this.trButtons2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons2.BorderColor = System.Drawing.Color.Black;
-            this.trButtons2.BorderRadius = 20;
-            this.trButtons2.BorderSize = 1;
-            this.trButtons2.FlatAppearance.BorderSize = 0;
-            this.trButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons2.ForeColor = System.Drawing.Color.White;
-            this.trButtons2.Location = new System.Drawing.Point(1079, 154);
-            this.trButtons2.Name = "trButtons2";
-            this.trButtons2.Size = new System.Drawing.Size(225, 79);
-            this.trButtons2.TabIndex = 31;
-            this.trButtons2.Text = "Update";
-            this.trButtons2.TextColor = System.Drawing.Color.White;
-            this.trButtons2.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -324,26 +301,164 @@ namespace ENROLLMENT_System
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 329);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1337, 369);
+            this.panel3.Size = new System.Drawing.Size(1353, 408);
             this.panel3.TabIndex = 2;
             // 
             // Prof_GridView
             // 
             this.Prof_GridView.AllowUserToAddRows = false;
             this.Prof_GridView.AllowUserToDeleteRows = false;
+            this.Prof_GridView.AutoGenerateColumns = false;
             this.Prof_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Prof_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete,
+            this.profidDataGridViewTextBoxColumn,
+            this.profFnameDataGridViewTextBoxColumn,
+            this.profLnameDataGridViewTextBoxColumn,
+            this.profMnameDataGridViewTextBoxColumn,
+            this.profContactDataGridViewTextBoxColumn,
+            this.profEmailDataGridViewTextBoxColumn,
+            this.profGenderDataGridViewTextBoxColumn,
+            this.profBdateDataGridViewTextBoxColumn,
+            this.profAddrDataGridViewTextBoxColumn});
+            this.Prof_GridView.DataSource = this.displayprofResultBindingSource;
             this.Prof_GridView.Location = new System.Drawing.Point(39, 7);
             this.Prof_GridView.Name = "Prof_GridView";
             this.Prof_GridView.ReadOnly = true;
             this.Prof_GridView.Size = new System.Drawing.Size(1274, 239);
             this.Prof_GridView.TabIndex = 0;
+            this.Prof_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Prof_GridView_CellContentClick);
+            // 
+            // displayprofResultBindingSource
+            // 
+            this.displayprofResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_profResult);
+            // 
+            // Update
+            // 
+            this.Update.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Update.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Update.BorderColor = System.Drawing.Color.Black;
+            this.Update.BorderRadius = 20;
+            this.Update.BorderSize = 1;
+            this.Update.FlatAppearance.BorderSize = 0;
+            this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.White;
+            this.Update.Location = new System.Drawing.Point(1129, 178);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(162, 55);
+            this.Update.TabIndex = 31;
+            this.Update.Text = "Update";
+            this.Update.TextColor = System.Drawing.Color.White;
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
+            // createNew
+            // 
+            this.createNew.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.createNew.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.createNew.BorderColor = System.Drawing.Color.Black;
+            this.createNew.BorderRadius = 15;
+            this.createNew.BorderSize = 1;
+            this.createNew.FlatAppearance.BorderSize = 0;
+            this.createNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createNew.ForeColor = System.Drawing.Color.White;
+            this.createNew.Location = new System.Drawing.Point(1149, 34);
+            this.createNew.Name = "createNew";
+            this.createNew.Size = new System.Drawing.Size(142, 43);
+            this.createNew.TabIndex = 13;
+            this.createNew.Text = "CREATE NEW";
+            this.createNew.TextColor = System.Drawing.Color.White;
+            this.createNew.UseVisualStyleBackColor = false;
+            this.createNew.Click += new System.EventHandler(this.createNew_Click);
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // profidDataGridViewTextBoxColumn
+            // 
+            this.profidDataGridViewTextBoxColumn.DataPropertyName = "Prof_id";
+            this.profidDataGridViewTextBoxColumn.HeaderText = "Prof_id";
+            this.profidDataGridViewTextBoxColumn.Name = "profidDataGridViewTextBoxColumn";
+            this.profidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profFnameDataGridViewTextBoxColumn
+            // 
+            this.profFnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Fname";
+            this.profFnameDataGridViewTextBoxColumn.HeaderText = "Prof_Fname";
+            this.profFnameDataGridViewTextBoxColumn.Name = "profFnameDataGridViewTextBoxColumn";
+            this.profFnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profLnameDataGridViewTextBoxColumn
+            // 
+            this.profLnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Lname";
+            this.profLnameDataGridViewTextBoxColumn.HeaderText = "Prof_Lname";
+            this.profLnameDataGridViewTextBoxColumn.Name = "profLnameDataGridViewTextBoxColumn";
+            this.profLnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profMnameDataGridViewTextBoxColumn
+            // 
+            this.profMnameDataGridViewTextBoxColumn.DataPropertyName = "Prof_Mname";
+            this.profMnameDataGridViewTextBoxColumn.HeaderText = "Prof_Mname";
+            this.profMnameDataGridViewTextBoxColumn.Name = "profMnameDataGridViewTextBoxColumn";
+            this.profMnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profContactDataGridViewTextBoxColumn
+            // 
+            this.profContactDataGridViewTextBoxColumn.DataPropertyName = "Prof_Contact";
+            this.profContactDataGridViewTextBoxColumn.HeaderText = "Prof_Contact";
+            this.profContactDataGridViewTextBoxColumn.Name = "profContactDataGridViewTextBoxColumn";
+            this.profContactDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profEmailDataGridViewTextBoxColumn
+            // 
+            this.profEmailDataGridViewTextBoxColumn.DataPropertyName = "Prof_Email";
+            this.profEmailDataGridViewTextBoxColumn.HeaderText = "Prof_Email";
+            this.profEmailDataGridViewTextBoxColumn.Name = "profEmailDataGridViewTextBoxColumn";
+            this.profEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profGenderDataGridViewTextBoxColumn
+            // 
+            this.profGenderDataGridViewTextBoxColumn.DataPropertyName = "Prof_Gender";
+            this.profGenderDataGridViewTextBoxColumn.HeaderText = "Prof_Gender";
+            this.profGenderDataGridViewTextBoxColumn.Name = "profGenderDataGridViewTextBoxColumn";
+            this.profGenderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profBdateDataGridViewTextBoxColumn
+            // 
+            this.profBdateDataGridViewTextBoxColumn.DataPropertyName = "Prof_Bdate";
+            this.profBdateDataGridViewTextBoxColumn.HeaderText = "Prof_Bdate";
+            this.profBdateDataGridViewTextBoxColumn.Name = "profBdateDataGridViewTextBoxColumn";
+            this.profBdateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profAddrDataGridViewTextBoxColumn
+            // 
+            this.profAddrDataGridViewTextBoxColumn.DataPropertyName = "Prof_Addr";
+            this.profAddrDataGridViewTextBoxColumn.HeaderText = "Prof_Addr";
+            this.profAddrDataGridViewTextBoxColumn.Name = "profAddrDataGridViewTextBoxColumn";
+            this.profAddrDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataEnt_Proffessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(1337, 698);
+            this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -356,6 +471,7 @@ namespace ENROLLMENT_System
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Prof_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayprofResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,7 +501,19 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.DateTimePicker prof_bdate;
         private System.Windows.Forms.ComboBox prof_gender;
         private System.Windows.Forms.DataGridView Prof_GridView;
-        private TRControls.TRButtons trButtons1;
-        private TRControls.TRButtons trButtons2;
+        private TRControls.TRButtons createNew;
+        private TRControls.TRButtons Update;
+        private System.Windows.Forms.BindingSource displayprofResultBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profFnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profLnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profMnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profContactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profGenderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profBdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profAddrDataGridViewTextBoxColumn;
     }
 }

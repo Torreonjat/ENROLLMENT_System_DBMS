@@ -29,6 +29,7 @@ namespace ENROLLMENT_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@ namespace ENROLLMENT_System
             this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbtotenr = new System.Windows.Forms.Label();
+            this.lbtotProf = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -55,6 +56,16 @@ namespace ENROLLMENT_System
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.enrolled_Stud_view = new System.Windows.Forms.DataGridView();
+            this.displayenrollResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.applyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applySemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applydateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applystatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approveDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applyYrLvlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -67,6 +78,7 @@ namespace ENROLLMENT_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enrolled_Stud_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayenrollResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +96,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 44);
+            this.label1.Size = new System.Drawing.Size(258, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
             // 
@@ -129,7 +141,7 @@ namespace ENROLLMENT_System
             this.lbtotClass.ForeColor = System.Drawing.SystemColors.Control;
             this.lbtotClass.Location = new System.Drawing.Point(14, 65);
             this.lbtotClass.Name = "lbtotClass";
-            this.lbtotClass.Size = new System.Drawing.Size(146, 76);
+            this.lbtotClass.Size = new System.Drawing.Size(147, 76);
             this.lbtotClass.TabIndex = 6;
             this.lbtotClass.Text = "###";
             // 
@@ -159,7 +171,7 @@ namespace ENROLLMENT_System
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.lbtotenr);
+            this.panel6.Controls.Add(this.lbtotProf);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Location = new System.Drawing.Point(688, 39);
@@ -177,16 +189,16 @@ namespace ENROLLMENT_System
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // lbtotenr
+            // lbtotProf
             // 
-            this.lbtotenr.AutoSize = true;
-            this.lbtotenr.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtotenr.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbtotenr.Location = new System.Drawing.Point(14, 65);
-            this.lbtotenr.Name = "lbtotenr";
-            this.lbtotenr.Size = new System.Drawing.Size(146, 76);
-            this.lbtotenr.TabIndex = 6;
-            this.lbtotenr.Text = "###";
+            this.lbtotProf.AutoSize = true;
+            this.lbtotProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotProf.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbtotProf.Location = new System.Drawing.Point(14, 65);
+            this.lbtotProf.Name = "lbtotProf";
+            this.lbtotProf.Size = new System.Drawing.Size(147, 76);
+            this.lbtotProf.TabIndex = 6;
+            this.lbtotProf.Text = "###";
             // 
             // label9
             // 
@@ -239,7 +251,7 @@ namespace ENROLLMENT_System
             this.lbTotEnrolled.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTotEnrolled.Location = new System.Drawing.Point(14, 65);
             this.lbTotEnrolled.Name = "lbTotEnrolled";
-            this.lbTotEnrolled.Size = new System.Drawing.Size(146, 76);
+            this.lbTotEnrolled.Size = new System.Drawing.Size(147, 76);
             this.lbTotEnrolled.TabIndex = 6;
             this.lbTotEnrolled.Text = "###";
             // 
@@ -294,7 +306,7 @@ namespace ENROLLMENT_System
             this.lbTotalStud.ForeColor = System.Drawing.SystemColors.Control;
             this.lbTotalStud.Location = new System.Drawing.Point(12, 67);
             this.lbTotalStud.Name = "lbTotalStud";
-            this.lbTotalStud.Size = new System.Drawing.Size(146, 76);
+            this.lbTotalStud.Size = new System.Drawing.Size(147, 76);
             this.lbTotalStud.TabIndex = 2;
             this.lbTotalStud.Text = "###";
             // 
@@ -333,12 +345,91 @@ namespace ENROLLMENT_System
             // 
             this.enrolled_Stud_view.AllowUserToAddRows = false;
             this.enrolled_Stud_view.AllowUserToDeleteRows = false;
+            this.enrolled_Stud_view.AutoGenerateColumns = false;
             this.enrolled_Stud_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.enrolled_Stud_view.Location = new System.Drawing.Point(12, 6);
+            this.enrolled_Stud_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.applyidDataGridViewTextBoxColumn,
+            this.applySemDataGridViewTextBoxColumn,
+            this.applydateDataGridViewTextBoxColumn,
+            this.applystatusDataGridViewTextBoxColumn,
+            this.approveDateDataGridViewTextBoxColumn,
+            this.studidDataGridViewTextBoxColumn,
+            this.uidDataGridViewTextBoxColumn,
+            this.applyYrLvlDataGridViewTextBoxColumn,
+            this.classidDataGridViewTextBoxColumn});
+            this.enrolled_Stud_view.DataSource = this.displayenrollResultBindingSource;
+            this.enrolled_Stud_view.Location = new System.Drawing.Point(12, 3);
             this.enrolled_Stud_view.Name = "enrolled_Stud_view";
             this.enrolled_Stud_view.ReadOnly = true;
-            this.enrolled_Stud_view.Size = new System.Drawing.Size(1329, 352);
+            this.enrolled_Stud_view.Size = new System.Drawing.Size(1329, 355);
             this.enrolled_Stud_view.TabIndex = 0;
+            // 
+            // displayenrollResultBindingSource
+            // 
+            this.displayenrollResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_enrollResult);
+            // 
+            // applyidDataGridViewTextBoxColumn
+            // 
+            this.applyidDataGridViewTextBoxColumn.DataPropertyName = "Apply_id";
+            this.applyidDataGridViewTextBoxColumn.HeaderText = "Apply_id";
+            this.applyidDataGridViewTextBoxColumn.Name = "applyidDataGridViewTextBoxColumn";
+            this.applyidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applySemDataGridViewTextBoxColumn
+            // 
+            this.applySemDataGridViewTextBoxColumn.DataPropertyName = "Apply_Sem";
+            this.applySemDataGridViewTextBoxColumn.HeaderText = "Apply_Sem";
+            this.applySemDataGridViewTextBoxColumn.Name = "applySemDataGridViewTextBoxColumn";
+            this.applySemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applydateDataGridViewTextBoxColumn
+            // 
+            this.applydateDataGridViewTextBoxColumn.DataPropertyName = "Apply_date";
+            this.applydateDataGridViewTextBoxColumn.HeaderText = "Apply_date";
+            this.applydateDataGridViewTextBoxColumn.Name = "applydateDataGridViewTextBoxColumn";
+            this.applydateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applystatusDataGridViewTextBoxColumn
+            // 
+            this.applystatusDataGridViewTextBoxColumn.DataPropertyName = "Apply_status";
+            this.applystatusDataGridViewTextBoxColumn.HeaderText = "Apply_status";
+            this.applystatusDataGridViewTextBoxColumn.Name = "applystatusDataGridViewTextBoxColumn";
+            this.applystatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // approveDateDataGridViewTextBoxColumn
+            // 
+            this.approveDateDataGridViewTextBoxColumn.DataPropertyName = "Approve_Date";
+            this.approveDateDataGridViewTextBoxColumn.HeaderText = "Approve_Date";
+            this.approveDateDataGridViewTextBoxColumn.Name = "approveDateDataGridViewTextBoxColumn";
+            this.approveDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studidDataGridViewTextBoxColumn
+            // 
+            this.studidDataGridViewTextBoxColumn.DataPropertyName = "Stud_id";
+            this.studidDataGridViewTextBoxColumn.HeaderText = "Stud_id";
+            this.studidDataGridViewTextBoxColumn.Name = "studidDataGridViewTextBoxColumn";
+            this.studidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uidDataGridViewTextBoxColumn
+            // 
+            this.uidDataGridViewTextBoxColumn.DataPropertyName = "U_id";
+            this.uidDataGridViewTextBoxColumn.HeaderText = "U_id";
+            this.uidDataGridViewTextBoxColumn.Name = "uidDataGridViewTextBoxColumn";
+            this.uidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // applyYrLvlDataGridViewTextBoxColumn
+            // 
+            this.applyYrLvlDataGridViewTextBoxColumn.DataPropertyName = "Apply_YrLvl";
+            this.applyYrLvlDataGridViewTextBoxColumn.HeaderText = "Apply_YrLvl";
+            this.applyYrLvlDataGridViewTextBoxColumn.Name = "applyYrLvlDataGridViewTextBoxColumn";
+            this.applyYrLvlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classidDataGridViewTextBoxColumn
+            // 
+            this.classidDataGridViewTextBoxColumn.DataPropertyName = "Class_id";
+            this.classidDataGridViewTextBoxColumn.HeaderText = "Class_id";
+            this.classidDataGridViewTextBoxColumn.Name = "classidDataGridViewTextBoxColumn";
+            this.classidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Admin_dashboard
             // 
@@ -351,6 +442,7 @@ namespace ENROLLMENT_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_dashboard";
             this.Text = "Admin_dashboard";
+            this.Load += new System.EventHandler(this.Admin_dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -368,6 +460,7 @@ namespace ENROLLMENT_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enrolled_Stud_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayenrollResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,12 +485,22 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label lbtotenr;
+        private System.Windows.Forms.Label lbtotProf;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbTotEnrolled;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.BindingSource displayenrollResultBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applyidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applySemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applydateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applystatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn approveDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn applyYrLvlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classidDataGridViewTextBoxColumn;
     }
 }

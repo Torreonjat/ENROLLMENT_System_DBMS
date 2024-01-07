@@ -34,6 +34,7 @@ namespace ENROLLMENT_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.add_studentBtn = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@ namespace ENROLLMENT_System
             this.label5 = new System.Windows.Forms.Label();
             this.Stud_Status = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.trButtons1 = new ENROLLMENT_System.TRControls.TRButtons();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -95,7 +95,7 @@ namespace ENROLLMENT_System
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 44);
+            this.label1.Size = new System.Drawing.Size(319, 44);
             this.label1.TabIndex = 15;
             this.label1.Text = "STUDENT FORM";
             // 
@@ -117,12 +117,32 @@ namespace ENROLLMENT_System
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.trButtons1);
+            this.panel4.Controls.Add(this.add_studentBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(132, 592);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1057, 67);
             this.panel4.TabIndex = 3;
+            // 
+            // add_studentBtn
+            // 
+            this.add_studentBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.add_studentBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.add_studentBtn.BorderColor = System.Drawing.Color.Black;
+            this.add_studentBtn.BorderRadius = 20;
+            this.add_studentBtn.BorderSize = 1;
+            this.add_studentBtn.FlatAppearance.BorderSize = 0;
+            this.add_studentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_studentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_studentBtn.ForeColor = System.Drawing.Color.Black;
+            this.add_studentBtn.Location = new System.Drawing.Point(738, 4);
+            this.add_studentBtn.Name = "add_studentBtn";
+            this.add_studentBtn.Size = new System.Drawing.Size(290, 60);
+            this.add_studentBtn.TabIndex = 0;
+            this.add_studentBtn.Text = "Submit";
+            this.add_studentBtn.TextColor = System.Drawing.Color.Black;
+            this.add_studentBtn.UseVisualStyleBackColor = false;
+            this.add_studentBtn.Click += new System.EventHandler(this.add_studentBtn_Click);
             // 
             // panel5
             // 
@@ -285,6 +305,7 @@ namespace ENROLLMENT_System
             this.Stud_Bdate.Name = "Stud_Bdate";
             this.Stud_Bdate.Size = new System.Drawing.Size(363, 20);
             this.Stud_Bdate.TabIndex = 75;
+            this.Stud_Bdate.ValueChanged += new System.EventHandler(this.Stud_Bdate_ValueChanged);
             // 
             // label9
             // 
@@ -520,25 +541,6 @@ namespace ENROLLMENT_System
             this.panel6.Size = new System.Drawing.Size(1057, 34);
             this.panel6.TabIndex = 0;
             // 
-            // trButtons1
-            // 
-            this.trButtons1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.trButtons1.BorderColor = System.Drawing.Color.Black;
-            this.trButtons1.BorderRadius = 20;
-            this.trButtons1.BorderSize = 1;
-            this.trButtons1.FlatAppearance.BorderSize = 0;
-            this.trButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trButtons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trButtons1.ForeColor = System.Drawing.Color.Black;
-            this.trButtons1.Location = new System.Drawing.Point(738, 4);
-            this.trButtons1.Name = "trButtons1";
-            this.trButtons1.Size = new System.Drawing.Size(290, 60);
-            this.trButtons1.TabIndex = 0;
-            this.trButtons1.Text = "Submit";
-            this.trButtons1.TextColor = System.Drawing.Color.Black;
-            this.trButtons1.UseVisualStyleBackColor = false;
-            // 
             // data_AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +555,7 @@ namespace ENROLLMENT_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "data_AddStudent";
             this.Text = "data_AddStudent";
+            this.Load += new System.EventHandler(this.data_AddStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -611,6 +614,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.TextBox Stud_Guardianfname;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox Stud_Guardianlname;
-        private TRControls.TRButtons trButtons1;
+        private TRControls.TRButtons add_studentBtn;
     }
 }

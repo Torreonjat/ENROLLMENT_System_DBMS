@@ -46,8 +46,6 @@ namespace ENROLLMENT_System
             this.btnProffesor = new System.Windows.Forms.Button();
             this.btnSection = new System.Windows.Forms.Button();
             this.btnProgram = new System.Windows.Forms.Button();
-            this.recordscontainer = new System.Windows.Forms.Panel();
-            this.btnrecords = new System.Windows.Forms.Button();
             this.settingscontainer = new System.Windows.Forms.Panel();
             this.btnsettings = new System.Windows.Forms.Button();
             this.btn_ChangePass = new System.Windows.Forms.Button();
@@ -63,7 +61,6 @@ namespace ENROLLMENT_System
             this.dashboardContainer.SuspendLayout();
             this.enrollContainer.SuspendLayout();
             this.dataentryContainer.SuspendLayout();
-            this.recordscontainer.SuspendLayout();
             this.settingscontainer.SuspendLayout();
             this.logoutcontainer.SuspendLayout();
             this.SuspendLayout();
@@ -75,13 +72,12 @@ namespace ENROLLMENT_System
             this.panelside.Controls.Add(this.dashboardContainer);
             this.panelside.Controls.Add(this.enrollContainer);
             this.panelside.Controls.Add(this.dataentryContainer);
-            this.panelside.Controls.Add(this.recordscontainer);
             this.panelside.Controls.Add(this.settingscontainer);
             this.panelside.Controls.Add(this.logoutcontainer);
             this.panelside.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(234, 737);
+            this.panelside.Size = new System.Drawing.Size(234, 776);
             this.panelside.TabIndex = 0;
             // 
             // panel1
@@ -281,39 +277,13 @@ namespace ENROLLMENT_System
             this.btnProgram.UseVisualStyleBackColor = true;
             this.btnProgram.Click += new System.EventHandler(this.btnProgram_Click);
             // 
-            // recordscontainer
-            // 
-            this.recordscontainer.Controls.Add(this.btnrecords);
-            this.recordscontainer.Location = new System.Drawing.Point(3, 375);
-            this.recordscontainer.Name = "recordscontainer";
-            this.recordscontainer.Size = new System.Drawing.Size(226, 56);
-            this.recordscontainer.TabIndex = 2;
-            // 
-            // btnrecords
-            // 
-            this.btnrecords.FlatAppearance.BorderSize = 0;
-            this.btnrecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrecords.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnrecords.Image = ((System.Drawing.Image)(resources.GetObject("btnrecords.Image")));
-            this.btnrecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrecords.Location = new System.Drawing.Point(0, 0);
-            this.btnrecords.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnrecords.Name = "btnrecords";
-            this.btnrecords.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnrecords.Size = new System.Drawing.Size(226, 56);
-            this.btnrecords.TabIndex = 0;
-            this.btnrecords.Text = "            RECORDS";
-            this.btnrecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrecords.UseVisualStyleBackColor = true;
-            this.btnrecords.Click += new System.EventHandler(this.btnrecords_Click);
-            // 
             // settingscontainer
             // 
             this.settingscontainer.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.settingscontainer.Controls.Add(this.btnsettings);
             this.settingscontainer.Controls.Add(this.btn_ChangePass);
             this.settingscontainer.Controls.Add(this.btnProfile);
-            this.settingscontainer.Location = new System.Drawing.Point(3, 437);
+            this.settingscontainer.Location = new System.Drawing.Point(3, 375);
             this.settingscontainer.MaximumSize = new System.Drawing.Size(226, 138);
             this.settingscontainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.settingscontainer.Name = "settingscontainer";
@@ -372,7 +342,7 @@ namespace ENROLLMENT_System
             // logoutcontainer
             // 
             this.logoutcontainer.Controls.Add(this.btnlogout);
-            this.logoutcontainer.Location = new System.Drawing.Point(3, 500);
+            this.logoutcontainer.Location = new System.Drawing.Point(3, 438);
             this.logoutcontainer.Name = "logoutcontainer";
             this.logoutcontainer.Size = new System.Drawing.Size(226, 56);
             this.logoutcontainer.TabIndex = 2;
@@ -393,13 +363,14 @@ namespace ENROLLMENT_System
             this.btnlogout.Text = "            LOGOUT";
             this.btnlogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // mainpanel
             // 
             this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainpanel.Location = new System.Drawing.Point(234, 0);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1136, 737);
+            this.mainpanel.Size = new System.Drawing.Size(1369, 776);
             this.mainpanel.TabIndex = 1;
             // 
             // dataEntryTimer_Tick
@@ -416,7 +387,7 @@ namespace ENROLLMENT_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 737);
+            this.ClientSize = new System.Drawing.Size(1603, 776);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panelside);
             this.MaximizeBox = false;
@@ -430,7 +401,6 @@ namespace ENROLLMENT_System
             this.dashboardContainer.ResumeLayout(false);
             this.enrollContainer.ResumeLayout(false);
             this.dataentryContainer.ResumeLayout(false);
-            this.recordscontainer.ResumeLayout(false);
             this.settingscontainer.ResumeLayout(false);
             this.logoutcontainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -447,8 +417,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Panel logoutcontainer;
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Panel settingscontainer;
-        private System.Windows.Forms.Panel recordscontainer;
-        private System.Windows.Forms.Button btnrecords;
         private System.Windows.Forms.Panel dataentryContainer;
         private System.Windows.Forms.Panel enrollContainer;
         private System.Windows.Forms.Button btn_enroll;

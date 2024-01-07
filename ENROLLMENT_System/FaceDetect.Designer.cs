@@ -31,7 +31,7 @@ namespace ENROLLMENT_System
         {
             this.label2 = new System.Windows.Forms.Label();
             this.pbCamera = new System.Windows.Forms.PictureBox();
-            this.btnDetect = new ENROLLMENT_System.TRControls.TRButtons();
+            this.detectcambtn = new ENROLLMENT_System.TRControls.TRButtons();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,31 +53,32 @@ namespace ENROLLMENT_System
             this.pbCamera.TabIndex = 31;
             this.pbCamera.TabStop = false;
             // 
-            // btnDetect
+            // detectcambtn
             // 
-            this.btnDetect.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnDetect.BackgroundColor = System.Drawing.Color.MediumAquamarine;
-            this.btnDetect.BorderColor = System.Drawing.Color.Black;
-            this.btnDetect.BorderRadius = 20;
-            this.btnDetect.BorderSize = 1;
-            this.btnDetect.FlatAppearance.BorderSize = 0;
-            this.btnDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetect.Font = new System.Drawing.Font("Sitka Small Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetect.ForeColor = System.Drawing.Color.Black;
-            this.btnDetect.Location = new System.Drawing.Point(245, 362);
-            this.btnDetect.Name = "btnDetect";
-            this.btnDetect.Size = new System.Drawing.Size(185, 43);
-            this.btnDetect.TabIndex = 33;
-            this.btnDetect.Text = "Detect";
-            this.btnDetect.TextColor = System.Drawing.Color.Black;
-            this.btnDetect.UseVisualStyleBackColor = false;
+            this.detectcambtn.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.detectcambtn.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.detectcambtn.BorderColor = System.Drawing.Color.Black;
+            this.detectcambtn.BorderRadius = 20;
+            this.detectcambtn.BorderSize = 1;
+            this.detectcambtn.FlatAppearance.BorderSize = 0;
+            this.detectcambtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detectcambtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detectcambtn.ForeColor = System.Drawing.Color.Black;
+            this.detectcambtn.Location = new System.Drawing.Point(245, 362);
+            this.detectcambtn.Name = "detectcambtn";
+            this.detectcambtn.Size = new System.Drawing.Size(185, 43);
+            this.detectcambtn.TabIndex = 33;
+            this.detectcambtn.Text = "Detect";
+            this.detectcambtn.TextColor = System.Drawing.Color.Black;
+            this.detectcambtn.UseVisualStyleBackColor = false;
+            this.detectcambtn.Click += new System.EventHandler(this.detectcambtn_Click);
             // 
             // FaceDetect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 494);
-            this.Controls.Add(this.btnDetect);
+            this.Controls.Add(this.detectcambtn);
             this.Controls.Add(this.pbCamera);
             this.Controls.Add(this.label2);
             this.Name = "FaceDetect";
@@ -92,6 +93,6 @@ namespace ENROLLMENT_System
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbCamera;
-        private TRControls.TRButtons btnDetect;
+        private TRControls.TRButtons detectcambtn;
     }
 }
