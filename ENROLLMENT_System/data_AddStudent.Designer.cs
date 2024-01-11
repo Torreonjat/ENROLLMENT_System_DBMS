@@ -478,9 +478,10 @@ namespace ENROLLMENT_System
             this.Stud_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stud_year.FormattingEnabled = true;
             this.Stud_year.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Others"});
+            "1st Year",
+            "2nd Year",
+            "3rd Year",
+            "4th Year"});
             this.Stud_year.Location = new System.Drawing.Point(789, 23);
             this.Stud_year.Name = "Stud_year";
             this.Stud_year.Size = new System.Drawing.Size(253, 28);

@@ -38,6 +38,7 @@ namespace ENROLLMENT_System
             this.Progupdate = new ENROLLMENT_System.TRControls.TRButtons();
             this.Progsave = new ENROLLMENT_System.TRControls.TRButtons();
             this.Prog_GridView = new System.Windows.Forms.DataGridView();
+            this.displayprogResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prog_type = new System.Windows.Forms.ComboBox();
             this.Prog_descripbox = new System.Windows.Forms.TextBox();
             this.Prog_namebox = new System.Windows.Forms.TextBox();
@@ -45,12 +46,10 @@ namespace ENROLLMENT_System
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.progidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prognameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.progDescripDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.progtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displayprogResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Prog_GridView)).BeginInit();
@@ -163,7 +162,6 @@ namespace ENROLLMENT_System
             this.Prog_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Prog_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.progidDataGridViewTextBoxColumn,
             this.prognameDataGridViewTextBoxColumn,
             this.progDescripDataGridViewTextBoxColumn,
@@ -175,6 +173,10 @@ namespace ENROLLMENT_System
             this.Prog_GridView.Size = new System.Drawing.Size(823, 524);
             this.Prog_GridView.TabIndex = 12;
             this.Prog_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Prog_GridView_CellContentClick);
+            // 
+            // displayprogResultBindingSource
+            // 
+            this.displayprogResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_progResult);
             // 
             // prog_type
             // 
@@ -244,14 +246,6 @@ namespace ENROLLMENT_System
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
             // progidDataGridViewTextBoxColumn
             // 
             this.progidDataGridViewTextBoxColumn.DataPropertyName = "Prog_id";
@@ -279,10 +273,6 @@ namespace ENROLLMENT_System
             this.progtypeDataGridViewTextBoxColumn.HeaderText = "Prog_type";
             this.progtypeDataGridViewTextBoxColumn.Name = "progtypeDataGridViewTextBoxColumn";
             this.progtypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // displayprogResultBindingSource
-            // 
-            this.displayprogResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_progResult);
             // 
             // dataEnt_Program
             // 
@@ -322,12 +312,11 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.ComboBox prog_type;
         private TRControls.TRButtons Progupdate;
         private TRControls.TRButtons Progsave;
+        private System.Windows.Forms.BindingSource displayprogResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn progidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prognameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn progDescripDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn progtypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource displayprogResultBindingSource;
     }
 }

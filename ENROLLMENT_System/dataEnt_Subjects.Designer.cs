@@ -40,15 +40,14 @@ namespace ENROLLMENT_System
             this.subjDescrip = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.subject_GridView = new System.Windows.Forms.DataGridView();
+            this.displaysubjResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SubSem = new System.Windows.Forms.ComboBox();
             this.SubjUnits = new System.Windows.Forms.TextBox();
             this.subjcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.displaysubjResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,7 +186,6 @@ namespace ENROLLMENT_System
             this.subject_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subject_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.subidDataGridViewTextBoxColumn,
             this.subCodeDataGridViewTextBoxColumn,
             this.subdescDataGridViewTextBoxColumn,
@@ -200,6 +198,10 @@ namespace ENROLLMENT_System
             this.subject_GridView.Size = new System.Drawing.Size(823, 549);
             this.subject_GridView.TabIndex = 21;
             this.subject_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.subject_GridView_CellContentClick);
+            // 
+            // displaysubjResultBindingSource
+            // 
+            this.displaysubjResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_subjResult);
             // 
             // SubSem
             // 
@@ -261,10 +263,6 @@ namespace ENROLLMENT_System
             this.label4.TabIndex = 15;
             this.label4.Text = "Subject Code";
             // 
-            // displaysubjResultBindingSource
-            // 
-            this.displaysubjResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_subjResult);
-            // 
             // Edit
             // 
             this.Edit.HeaderText = "Edit";
@@ -272,14 +270,6 @@ namespace ENROLLMENT_System
             this.Edit.ReadOnly = true;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // subidDataGridViewTextBoxColumn
             // 
@@ -357,7 +347,6 @@ namespace ENROLLMENT_System
         private TRControls.TRButtons Subjsave;
         private System.Windows.Forms.BindingSource displaysubjResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn subidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subdescDataGridViewTextBoxColumn;

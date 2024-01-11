@@ -32,18 +32,18 @@ namespace ENROLLMENT_System
                 {
                     if (string.IsNullOrWhiteSpace(textBox.Text))
                     {
-                        return false; // At least one textbox is not filled
+                        return false; 
                     }
                 }
                 else if (ctrl.HasChildren)
                 {
-                    if (!AllTextBoxesFilled(ctrl)) // Recursively check child controls
+                    if (!AllTextBoxesFilled(ctrl)) 
                     {
                         return false;
                     }
                 }
             }
-            return true; // All textboxes are filled
+            return true; 
         }
         private void Update_Click(object sender, EventArgs e)
         {

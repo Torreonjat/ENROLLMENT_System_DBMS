@@ -29,7 +29,7 @@ namespace ENROLLMENT_System
         }
         private void display()
         {
-            enrolled_Stud_view.DataSource = db.display_enrollee();
+            enrolled_Stud_view.DataSource = db.display_enroll();
         }
         private void totalnumStudents()
         {

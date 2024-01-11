@@ -21,6 +21,7 @@ namespace ENROLLMENT_System
             display_prof();
 
             Update.Hide();
+            updatepanel.Hide();
         }
 
         private void createNew_Click(object sender, EventArgs e)
@@ -38,14 +39,14 @@ namespace ENROLLMENT_System
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+
         private void data_AddProffessor_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
-            Prof_GridView.DataSource = null; // Clear the existing data source
-            Prof_GridView.Rows.Clear(); // Clear the existing rows
-            Prof_GridView.Refresh(); // Refresh the DataGridView
+            Prof_GridView.DataSource = null; 
+            Prof_GridView.Rows.Clear(); 
+            Prof_GridView.Refresh(); 
 
-            // Load the updated data from the database
             Prof_GridView.DataSource = db.display_prof();
         }
         private void display_prof()
@@ -70,11 +71,44 @@ namespace ENROLLMENT_System
             }
             catch (Exception ex)
             {
-                // Handle exceptions that may occur during the search
                 MessageBox.Show("An error occurred: " + ex.Message, "Error");
             }
         }
-
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false; 
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false; 
+                    }
+                }
+                else if (ctrl is DateTimePicker dateTimePicker)
+                {
+                    if (dateTimePicker.Value == DateTimePicker.MinimumDateTime)
+                    {
+                        return false; 
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl)) 
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true; 
+        }
         private void Update_Click(object sender, EventArgs e)
         {
 
@@ -84,39 +118,32 @@ namespace ENROLLMENT_System
             Regex regemail = new Regex(@"^[\w\.-]+@[\w\.-]+\.\w+$", RegexOptions.IgnoreCase);
             Regex regphone = new Regex(@"(09|\+639)[-.\s]?[0-9]{9}");
 
-            bool isFnameEmpty = string.IsNullOrWhiteSpace(profFname.Text);
-            bool isLnameEmpty = string.IsNullOrWhiteSpace(profLname.Text);
-            bool isGenderEmpty = string.IsNullOrWhiteSpace(prof_gender.Text);
-            bool isAddressEmpty = string.IsNullOrWhiteSpace(profAddress.Text);
-            bool isEmailEmpty = string.IsNullOrWhiteSpace(profEmail.Text);
-            bool isContactEmpty = string.IsNullOrWhiteSpace(profContact.Text);
-
             try
             {
-                if (isFnameEmpty || isLnameEmpty || isAddressEmpty || isEmailEmpty || isContactEmpty || isGenderEmpty)
+                bool allTextBoxesFilled = AllInputControlsFilled(this);
+                if (!regphone.IsMatch(profContact.Text))
+                {
+                    MessageBox.Show("Invalid Input for phone: " + profContact.Text, "ERROR");
+                    return;
+                }
+                if (!regemail.IsMatch(profEmail.Text))
+                {
+                    MessageBox.Show("Invalid Input for email: " + profEmail.Text, "ERROR");
+                    return;
+                }
+
+
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
                 else
                 {
-                    if (regphone.IsMatch(profContact.Text))
-                    {
-                        if (regemail.IsMatch(profEmail.Text))
-                        {
-                            db.update_prof(id, profFname.Text, profLname.Text, ProfMname.Text, profContact.Text, profEmail.Text, prof_gender.Text, dateOnly, profAddress.Text);
-                            MessageBox.Show("Updated Successfully", "SAVE");
-                            clear();
-                            display_prof();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid Input for email: " + profEmail.Text, "ERROR");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Input for phone: " + profContact.Text, "ERROR");
-                    }
+                    db.update_prof(id, profFname.Text, profLname.Text, ProfMname.Text, profContact.Text, profEmail.Text, prof_gender.Text, dateOnly, profAddress.Text);
+                    MessageBox.Show("Updated Successfully", "SAVE");
+                    clear();
+                    display_prof();
+                    updatepanel.Hide();    
                 }
             }
             catch (Exception ex)
@@ -142,36 +169,24 @@ namespace ENROLLMENT_System
             {
                 if (Prof_GridView.Columns[e.ColumnIndex].Name == "Edit")
                 {
+                    updatepanel.Show();
                     Update.Show();
-                    id = int.Parse(Prof_GridView.CurrentRow.Cells[2].Value.ToString());
-                    profLname.Text = Prof_GridView.CurrentRow.Cells[3].Value.ToString();
-                    profFname.Text = Prof_GridView.CurrentRow.Cells[4].Value.ToString();
-                    ProfMname.Text = Prof_GridView.CurrentRow.Cells[5].Value.ToString();
-                    profContact.Text = Prof_GridView.CurrentRow.Cells[6].Value.ToString();
-                    profEmail.Text = Prof_GridView.CurrentRow.Cells[7].Value.ToString();
-                    prof_bdate.Value = DateTime.Parse(Prof_GridView.CurrentRow.Cells[9].Value.ToString());
-                    profAddress.Text = Prof_GridView.CurrentRow.Cells[10].Value.ToString();
+                    id = int.Parse(Prof_GridView.CurrentRow.Cells[1].Value.ToString());
+                    profLname.Text = Prof_GridView.CurrentRow.Cells[2].Value.ToString();
+                    profFname.Text = Prof_GridView.CurrentRow.Cells[3].Value.ToString();
+                    ProfMname.Text = Prof_GridView.CurrentRow.Cells[4].Value.ToString();
+                    profContact.Text = Prof_GridView.CurrentRow.Cells[5].Value.ToString();
+                    profEmail.Text = Prof_GridView.CurrentRow.Cells[6].Value.ToString();
+                    prof_bdate.Value = DateTime.Parse(Prof_GridView.CurrentRow.Cells[8].Value.ToString());
+                    profAddress.Text = Prof_GridView.CurrentRow.Cells[9].Value.ToString();
 
-                    string genderValue = Prof_GridView.CurrentRow.Cells[8].Value.ToString();
+                    string genderValue = Prof_GridView.CurrentRow.Cells[7].Value.ToString();
 
-                    // Find the corresponding item in editGender ComboBox
                     int genderIndex = prof_gender.FindStringExact(genderValue);
 
-                    // Set the selected item in the ComboBox based on the retrieved gender
                     if (genderIndex != -1)
                     {
                         prof_gender.SelectedIndex = genderIndex;
-                    }
-                }
-                if (Prof_GridView.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        id = int.Parse(Prof_GridView.CurrentRow.Cells[2].Value.ToString());
-                        db.delete_prof(id);
-                        MessageBox.Show("Successfully Deleted", "DELETE");
-                        clear();
-                        Prof_GridView.DataSource = db.display_prof();
                     }
                 }
             }
@@ -199,7 +214,6 @@ namespace ENROLLMENT_System
             }
             catch (Exception ex)
             {
-                // Handle exceptions that may occur during the search
                 MessageBox.Show("An error occurred: " + ex.Message, "Error");
             }
         }

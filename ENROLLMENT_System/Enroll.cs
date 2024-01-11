@@ -24,45 +24,39 @@ namespace ENROLLMENT_System
             string Datenow = DateTime.Now.Date.ToString("D");
 
             lbdate.Text = Datenow;
-            lbtime.Text = DateTime.Now.ToString("h:mm:ss tt"); // Use "h" for 12-hour format
+            lbtime.Text = DateTime.Now.ToString("h:mm:ss tt");
             InitializeTimer();
 
             LoadClassCode();
             display();
-            //enrollpanel.Hide();
+            enrollpanel.Hide();
 
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterScreen;
         }
         private void InitializeTimer()
         {
-            // Create a label to display the time
             timeLabel = new Label();
             timeLabel.Dock = DockStyle.Fill;
             timeLabel.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
             timeLabel.TextAlign = ContentAlignment.MiddleCenter;
 
-            // Add the label to the form
             Controls.Add(timeLabel);
 
-            // Create a timer with an interval of 1000 milliseconds (1 second)
             timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
 
-            // Start the timer
             timer.Start();
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Update the label with the current time
-            lbtime.Text = DateTime.Now.ToString("h:mm:ss tt"); // Use "h" for 12-hour format
+            lbtime.Text = DateTime.Now.ToString("h:mm:ss tt"); 
         }
         private void LoadClassCode()
         {
             try
             {
-                // Assuming db.display_sectname() returns a list of objects with a property named FullSectionName
                 var classNames = db.display_classname()
                                       .Select(result => new CLASS
                                       {
@@ -70,7 +64,6 @@ namespace ENROLLMENT_System
                                       })
                                       .ToList();
 
-                // Add a default item at the top
                 classNames.Insert(0, new CLASS { Class_Code = " " });
 
                 ClassCodeEnroll.DataSource = classNames;
@@ -82,17 +75,41 @@ namespace ENROLLMENT_System
                 MessageBox.Show($"Error loading Section names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void submitbtn_Click(object sender, EventArgs e)
         {
-            bool isSemempty = string.IsNullOrWhiteSpace(sem_enroll.Text);
-            bool isStudEmpty = string.IsNullOrWhiteSpace(stud_enroll.Text);
-            bool isYrempty = string.IsNullOrWhiteSpace(yr_enroll.Text);
-            bool isCcodeEmpty = string.IsNullOrWhiteSpace(ClassCodeEnroll.Text);
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (isSemempty || isStudEmpty || isYrempty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
@@ -104,7 +121,6 @@ namespace ENROLLMENT_System
                     string stat = "Pending";
 
 
-                    // Convert Stud_ID to int
                     if (!int.TryParse(Stud_ID, out int studIdInt))
                     {
                         MessageBox.Show("Can not convert into int", "Error");
@@ -130,6 +146,7 @@ namespace ENROLLMENT_System
                     MessageBox.Show("Successfully Recorded", "Message");
                     clear();
                     display();
+                    enrollpanel.Hide();
                 }
             }
             catch (Exception ex)
@@ -149,7 +166,7 @@ namespace ENROLLMENT_System
 
         private void display()
         {
-            display_enrollees.DataSource = db.display_enroll_app();
+            display_enrollees.DataSource = db.display_enrollee();
         }
 
         private void display_enrollees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -159,6 +176,7 @@ namespace ENROLLMENT_System
             {
                 if (display_enrollees.Columns[e.ColumnIndex].Name == "Edit")
                 {
+                    enrollpanel.Show();
                     addEnrollees.Hide();
                     display_enrollees.Hide();
                     display_enrollees.Show();
@@ -166,23 +184,12 @@ namespace ENROLLMENT_System
                     approvebtn.Show();
                     declinebtn.Show();
                     updatebtn.Show();
-                    id = int.Parse(display_enrollees.CurrentRow.Cells[2].Value.ToString());
-                    sem_enroll.SelectedItem = display_enrollees.CurrentRow.Cells[3].Value.ToString();
-                    stud_enroll.Text = display_enrollees.CurrentRow.Cells[7].Value.ToString();
-                    yr_enroll.SelectedItem = display_enrollees.CurrentRow.Cells[9].Value.ToString();
-                    ClassCodeEnroll.SelectedItem = display_enrollees.CurrentRow.Cells[10].Value.ToString();
+                    id = int.Parse(display_enrollees.CurrentRow.Cells[1].Value.ToString());
+                    sem_enroll.SelectedItem = display_enrollees.CurrentRow.Cells[5].Value.ToString();
+                    stud_enroll.Text = display_enrollees.CurrentRow.Cells[2].Value.ToString();
+                    yr_enroll.SelectedItem = display_enrollees.CurrentRow.Cells[6].Value.ToString();
+                    ClassCodeEnroll.SelectedItem = display_enrollees.CurrentRow.Cells[7].Value.ToString();
                     setClasscode();
-                }
-                else if (display_enrollees.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        id = int.Parse(display_enrollees.CurrentRow.Cells[2].Value.ToString());
-                        db.delete_prog(id);
-                        clear();
-                        MessageBox.Show("Successfully Deleted", "Message");
-                        display_enrollees.DataSource = db.display_prog();
-                    }
                 }
             }
             catch (Exception ex)
@@ -194,12 +201,11 @@ namespace ENROLLMENT_System
         {
             try
             {
-                int classId = int.Parse(display_enrollees.CurrentRow.Cells[10].Value.ToString());
+                int classId = int.Parse(display_enrollees.CurrentRow.Cells[7].Value.ToString());
                 string classcode = GetClasscode(classId);
 
                 if (!string.IsNullOrEmpty(classcode))
                 {
-                    // Find the corresponding item in the ComboBox and set it as selected
                     foreach (CLASS item in ClassCodeEnroll.Items)
                     {
                         if (item.Class_Code == classcode)
@@ -215,33 +221,13 @@ namespace ENROLLMENT_System
                 MessageBox.Show("Error setting class code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private int GetapplyID(int applyID)
-        {
-            if (applyID != 0)
-            {
-                // Assuming db.select_ProgIdbyId returns an integer
-                int classId = int.Parse(display_enrollees.CurrentRow.Cells[10].Value.ToString());
-                if (classId != 0)
-                {
-                    // If you already have the Prog_id, no need to query it again
-                    return classId;
-
-                }
-                MessageBox.Show("id" + classId);
-            }
-
-            // Return a default value or handle the case where studentId is 0
-            return 0; // Change this default value accordingly
-        }
-
-
+        
         private string GetClasscode(int classId)
         {
             try
             {
                 using (var db = new DataClassEnrollmentDataContext())
                 {
-                    // Assuming select_progname is a LINQ to SQL method mapped to the stored procedure
                     var result = db.select_classname(classId).SingleOrDefault();
 
                     // Ensure the result is not null before accessing properties
@@ -265,19 +251,16 @@ namespace ENROLLMENT_System
             label8.Hide();
             approvebtn.Hide();
             declinebtn.Hide();
-            //enrollpanel.Show();
+            enrollpanel.Show();
         }
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            bool isSemempty = string.IsNullOrWhiteSpace(sem_enroll.Text);
-            bool isStudEmpty = string.IsNullOrWhiteSpace(stud_enroll.Text);
-            bool isYrempty = string.IsNullOrWhiteSpace(yr_enroll.Text);
-            bool isCcodeEmpty = string.IsNullOrWhiteSpace(ClassCodeEnroll.Text);
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (isSemempty || isStudEmpty || isYrempty || isCcodeEmpty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
@@ -326,7 +309,7 @@ namespace ENROLLMENT_System
                     }
 
                     int userId = userActive.CurrentUser.User.userid;
-                    id = int.Parse(display_enrollees.CurrentRow.Cells[2].Value.ToString());
+                    id = int.Parse(display_enrollees.CurrentRow.Cells[1].Value.ToString());
                     // Get the previous date from the database
                     ISingleResult<getPreviousEnrollmentDateResult> result = db.getPreviousEnrollmentDate(id);
 
@@ -342,6 +325,7 @@ namespace ENROLLMENT_System
 
                     clear();
                     display();
+                    enrollpanel.Hide();
                 }
             }
             catch (Exception ex)
@@ -362,5 +346,6 @@ namespace ENROLLMENT_System
                 display_enrollees.DataSource = db.search_enroll(searchtb.Text);
             }
         }
+
     }
 }

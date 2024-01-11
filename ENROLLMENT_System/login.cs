@@ -35,16 +35,13 @@ namespace ENROLLMENT_System
         }
         private void InitializeTimer()
         {
-            // Create a label to display the time
             timeLabel = new Label();
             timeLabel.Dock = DockStyle.Fill;
             timeLabel.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
             timeLabel.TextAlign = ContentAlignment.MiddleCenter;
 
-            // Add the label to the form
             Controls.Add(timeLabel);
 
-            // Create a timer with an interval of 1000 milliseconds (1 second)
             timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
@@ -54,8 +51,7 @@ namespace ENROLLMENT_System
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Update the label with the current time
-            time.Text = DateTime.Now.ToString("h:mm:ss tt"); // Use "h" for 12-hour format
+            time.Text = DateTime.Now.ToString("h:mm:ss tt"); 
         }
         private bool AllTextBoxesFilled(Control control)
         {
@@ -65,18 +61,18 @@ namespace ENROLLMENT_System
                 {
                     if (string.IsNullOrWhiteSpace(textBox.Text))
                     {
-                        return false; // At least one textbox is not filled
+                        return false; 
                     }
                 }
                 else if (ctrl.HasChildren)
                 {
-                    if (!AllTextBoxesFilled(ctrl)) // Recursively check child controls
+                    if (!AllTextBoxesFilled(ctrl)) 
                     {
                         return false;
                     }
                 }
             }
-            return true; // All textboxes are filled
+            return true; 
         }
         private void loginbtn_Click(object sender, EventArgs e)
         {
@@ -93,7 +89,7 @@ namespace ENROLLMENT_System
 
             if (resultUser != null)
             {
-                int userId = resultUser.U_id; // Assuming there is a property named UserId in select_userIdResult
+                int userId = resultUser.U_id; 
                 userActive userLog = new userActive(userId, tbUsername.Text);
 
                 userActive.CurrentUser.User = userLog;
@@ -138,7 +134,7 @@ namespace ENROLLMENT_System
         }
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Show();  // Show the existing instance of the login form
+            this.Show();  
         }
 
         private void showPass_CheckedChanged(object sender, EventArgs e)

@@ -98,7 +98,7 @@ namespace ENROLLMENT_System
                     }
                     else
                     {
-                        MessageBox.Show("Open the camera first", "Message");
+                        MessageBox.Show("Opening Camera failed", "Message");
                     }
                     db.add_user(reg_Uname.Text, reg_Fname.Text, reg_Lname.Text, reg_Pass.Text, reg_Contact.Text);
                     MessageBox.Show("Successfully Recorded", "Message");

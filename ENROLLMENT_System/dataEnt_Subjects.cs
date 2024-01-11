@@ -34,19 +34,42 @@ namespace ENROLLMENT_System
             SubjUnits.Text = "";
         }
 
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         private void Subjsave_Click(object sender, EventArgs e)
         {
-            string selectedsem = SubSem.SelectedItem?.ToString(); // Use ToString() to convert object to string
-
-            bool issubMISempty = string.IsNullOrWhiteSpace(subjcode.Text);
-            bool issubDescripempty = string.IsNullOrWhiteSpace(subjDescrip.Text);
-            bool issubSemEmpty = string.IsNullOrWhiteSpace(selectedsem);
-            bool issubUnitsempty = string.IsNullOrWhiteSpace(SubjUnits.Text);
-
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (issubMISempty || issubDescripempty || issubSemEmpty || issubUnitsempty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
@@ -134,22 +157,11 @@ namespace ENROLLMENT_System
                 {
                     Subjsave.Hide();
                     Subjupdate.Show();
-                    id = int.Parse(subject_GridView.CurrentRow.Cells[2].Value.ToString());
-                    subjcode.Text = subject_GridView.CurrentRow.Cells[3].Value.ToString();
-                    subjDescrip.Text = subject_GridView.CurrentRow.Cells[4].Value.ToString();
-                    SubSem.SelectedItem = subject_GridView.CurrentRow.Cells[5].Value.ToString();
-                    SubjUnits.Text = subject_GridView.CurrentRow.Cells[6].Value.ToString();
-                }
-                else if (subject_GridView.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        id = int.Parse(subject_GridView.CurrentRow.Cells[2].Value.ToString());
-                        db.delete_subj(id);
-                        clear();
-                        MessageBox.Show("Successfully Deleted", "Message");
-                        subject_GridView.DataSource = db.display_subj();
-                    }
+                    id = int.Parse(subject_GridView.CurrentRow.Cells[1].Value.ToString());
+                    subjcode.Text = subject_GridView.CurrentRow.Cells[2].Value.ToString();
+                    subjDescrip.Text = subject_GridView.CurrentRow.Cells[3].Value.ToString();
+                    SubSem.SelectedItem = subject_GridView.CurrentRow.Cells[4].Value.ToString();
+                    SubjUnits.Text = subject_GridView.CurrentRow.Cells[5].Value.ToString();
                 }
             }
             catch (Exception ex)
