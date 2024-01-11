@@ -34,7 +34,7 @@ namespace ENROLLMENT_System
             this.label5 = new System.Windows.Forms.Label();
             this.prof_searchbar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.updatepanel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,7 +57,6 @@ namespace ENROLLMENT_System
             this.Update = new ENROLLMENT_System.TRControls.TRButtons();
             this.createNew = new ENROLLMENT_System.TRControls.TRButtons();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.profidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profLnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +67,7 @@ namespace ENROLLMENT_System
             this.profBdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profAddrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.updatepanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Prof_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayprofResultBindingSource)).BeginInit();
@@ -116,30 +115,30 @@ namespace ENROLLMENT_System
             this.label1.TabIndex = 10;
             this.label1.Text = "TEACHER LIST";
             // 
-            // panel2
+            // updatepanel
             // 
-            this.panel2.Controls.Add(this.Update);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.prof_bdate);
-            this.panel2.Controls.Add(this.prof_gender);
-            this.panel2.Controls.Add(this.profAddress);
-            this.panel2.Controls.Add(this.profEmail);
-            this.panel2.Controls.Add(this.profContact);
-            this.panel2.Controls.Add(this.ProfMname);
-            this.panel2.Controls.Add(this.profFname);
-            this.panel2.Controls.Add(this.profLname);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1353, 249);
-            this.panel2.TabIndex = 1;
+            this.updatepanel.Controls.Add(this.Update);
+            this.updatepanel.Controls.Add(this.label10);
+            this.updatepanel.Controls.Add(this.label9);
+            this.updatepanel.Controls.Add(this.label8);
+            this.updatepanel.Controls.Add(this.label7);
+            this.updatepanel.Controls.Add(this.label6);
+            this.updatepanel.Controls.Add(this.label4);
+            this.updatepanel.Controls.Add(this.label3);
+            this.updatepanel.Controls.Add(this.label2);
+            this.updatepanel.Controls.Add(this.prof_bdate);
+            this.updatepanel.Controls.Add(this.prof_gender);
+            this.updatepanel.Controls.Add(this.profAddress);
+            this.updatepanel.Controls.Add(this.profEmail);
+            this.updatepanel.Controls.Add(this.profContact);
+            this.updatepanel.Controls.Add(this.ProfMname);
+            this.updatepanel.Controls.Add(this.profFname);
+            this.updatepanel.Controls.Add(this.profLname);
+            this.updatepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.updatepanel.Location = new System.Drawing.Point(0, 80);
+            this.updatepanel.Name = "updatepanel";
+            this.updatepanel.Size = new System.Drawing.Size(1353, 249);
+            this.updatepanel.TabIndex = 1;
             // 
             // label10
             // 
@@ -312,7 +311,6 @@ namespace ENROLLMENT_System
             this.Prof_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Prof_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.profidDataGridViewTextBoxColumn,
             this.profFnameDataGridViewTextBoxColumn,
             this.profLnameDataGridViewTextBoxColumn,
@@ -381,14 +379,6 @@ namespace ENROLLMENT_System
             this.Edit.ReadOnly = true;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // profidDataGridViewTextBoxColumn
             // 
@@ -460,15 +450,15 @@ namespace ENROLLMENT_System
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.updatepanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dataEnt_Proffessor";
             this.Text = "dataEnt_Proffessor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.updatepanel.ResumeLayout(false);
+            this.updatepanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Prof_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayprofResultBindingSource)).EndInit();
@@ -479,7 +469,7 @@ namespace ENROLLMENT_System
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel updatepanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox prof_searchbar;
@@ -505,7 +495,6 @@ namespace ENROLLMENT_System
         private TRControls.TRButtons Update;
         private System.Windows.Forms.BindingSource displayprofResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn profidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profFnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profLnameDataGridViewTextBoxColumn;

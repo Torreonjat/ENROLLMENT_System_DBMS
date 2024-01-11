@@ -31,15 +31,16 @@ namespace ENROLLMENT_System
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lbtime = new System.Windows.Forms.Label();
             this.lbdate = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.addEnrollees = new ENROLLMENT_System.TRControls.TRButtons();
+            this.searchtb = new System.Windows.Forms.TextBox();
+            this.enrollpanel = new System.Windows.Forms.Panel();
             this.updatebtn = new ENROLLMENT_System.TRControls.TRButtons();
             this.submitbtn = new ENROLLMENT_System.TRControls.TRButtons();
-            this.addEnrollees = new ENROLLMENT_System.TRControls.TRButtons();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelin = new System.Windows.Forms.Panel();
             this.ClassCodeEnroll = new System.Windows.Forms.ComboBox();
             this.declinebtn = new System.Windows.Forms.RadioButton();
             this.sem_enroll = new System.Windows.Forms.ComboBox();
@@ -51,11 +52,10 @@ namespace ENROLLMENT_System
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.searchtb = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.display_enrollees = new System.Windows.Forms.DataGridView();
+            this.displayenrolleeResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.applyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,11 +64,10 @@ namespace ENROLLMENT_System
             this.applyYrLvlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displayenrolleeResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.enrollpanel.SuspendLayout();
+            this.panelin.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.display_enrollees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayenrolleeResultBindingSource)).BeginInit();
@@ -76,12 +75,34 @@ namespace ENROLLMENT_System
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbtime);
+            this.panel1.Controls.Add(this.lbdate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 77);
             this.panel1.TabIndex = 0;
+            // 
+            // lbtime
+            // 
+            this.lbtime.AutoSize = true;
+            this.lbtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtime.Location = new System.Drawing.Point(1025, 49);
+            this.lbtime.Name = "lbtime";
+            this.lbtime.Size = new System.Drawing.Size(43, 20);
+            this.lbtime.TabIndex = 1;
+            this.lbtime.Text = "Time";
+            // 
+            // lbdate
+            // 
+            this.lbdate.AutoSize = true;
+            this.lbdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdate.Location = new System.Drawing.Point(754, 49);
+            this.lbdate.Name = "lbdate";
+            this.lbdate.Size = new System.Drawing.Size(44, 20);
+            this.lbdate.TabIndex = 0;
+            this.lbdate.Text = "Date";
             // 
             // label1
             // 
@@ -95,46 +116,54 @@ namespace ENROLLMENT_System
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbtime);
-            this.panel2.Controls.Add(this.lbdate);
+            this.panel2.Controls.Add(this.addEnrollees);
+            this.panel2.Controls.Add(this.searchtb);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1353, 44);
+            this.panel2.Size = new System.Drawing.Size(1353, 69);
             this.panel2.TabIndex = 1;
             // 
-            // lbtime
+            // addEnrollees
             // 
-            this.lbtime.AutoSize = true;
-            this.lbtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtime.Location = new System.Drawing.Point(1069, 12);
-            this.lbtime.Name = "lbtime";
-            this.lbtime.Size = new System.Drawing.Size(43, 20);
-            this.lbtime.TabIndex = 1;
-            this.lbtime.Text = "Time";
+            this.addEnrollees.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.addEnrollees.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.addEnrollees.BorderColor = System.Drawing.Color.Black;
+            this.addEnrollees.BorderRadius = 20;
+            this.addEnrollees.BorderSize = 1;
+            this.addEnrollees.FlatAppearance.BorderSize = 0;
+            this.addEnrollees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEnrollees.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEnrollees.ForeColor = System.Drawing.Color.White;
+            this.addEnrollees.Location = new System.Drawing.Point(1071, 9);
+            this.addEnrollees.Name = "addEnrollees";
+            this.addEnrollees.Size = new System.Drawing.Size(175, 50);
+            this.addEnrollees.TabIndex = 19;
+            this.addEnrollees.Text = "Create New";
+            this.addEnrollees.TextColor = System.Drawing.Color.White;
+            this.addEnrollees.UseVisualStyleBackColor = false;
+            this.addEnrollees.Click += new System.EventHandler(this.addEnrollees_Click);
             // 
-            // lbdate
+            // searchtb
             // 
-            this.lbdate.AutoSize = true;
-            this.lbdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdate.Location = new System.Drawing.Point(798, 12);
-            this.lbdate.Name = "lbdate";
-            this.lbdate.Size = new System.Drawing.Size(44, 20);
-            this.lbdate.TabIndex = 0;
-            this.lbdate.Text = "Date";
+            this.searchtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchtb.Location = new System.Drawing.Point(480, 19);
+            this.searchtb.Multiline = true;
+            this.searchtb.Name = "searchtb";
+            this.searchtb.Size = new System.Drawing.Size(568, 34);
+            this.searchtb.TabIndex = 0;
+            this.searchtb.TextChanged += new System.EventHandler(this.searchtb_TextChanged);
             // 
-            // panel3
+            // enrollpanel
             // 
-            this.panel3.Controls.Add(this.updatebtn);
-            this.panel3.Controls.Add(this.submitbtn);
-            this.panel3.Controls.Add(this.addEnrollees);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.searchtb);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 121);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1353, 274);
-            this.panel3.TabIndex = 2;
+            this.enrollpanel.Controls.Add(this.updatebtn);
+            this.enrollpanel.Controls.Add(this.submitbtn);
+            this.enrollpanel.Controls.Add(this.panelin);
+            this.enrollpanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.enrollpanel.Location = new System.Drawing.Point(0, 146);
+            this.enrollpanel.Name = "enrollpanel";
+            this.enrollpanel.Size = new System.Drawing.Size(1353, 274);
+            this.enrollpanel.TabIndex = 2;
             // 
             // updatebtn
             // 
@@ -147,7 +176,7 @@ namespace ENROLLMENT_System
             this.updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatebtn.ForeColor = System.Drawing.Color.White;
-            this.updatebtn.Location = new System.Drawing.Point(1073, 137);
+            this.updatebtn.Location = new System.Drawing.Point(1071, 97);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(175, 50);
             this.updatebtn.TabIndex = 21;
@@ -167,7 +196,7 @@ namespace ENROLLMENT_System
             this.submitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitbtn.ForeColor = System.Drawing.Color.White;
-            this.submitbtn.Location = new System.Drawing.Point(1073, 72);
+            this.submitbtn.Location = new System.Drawing.Point(1071, 32);
             this.submitbtn.Name = "submitbtn";
             this.submitbtn.Size = new System.Drawing.Size(175, 50);
             this.submitbtn.TabIndex = 20;
@@ -176,44 +205,24 @@ namespace ENROLLMENT_System
             this.submitbtn.UseVisualStyleBackColor = false;
             this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
-            // addEnrollees
+            // panelin
             // 
-            this.addEnrollees.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.addEnrollees.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.addEnrollees.BorderColor = System.Drawing.Color.Black;
-            this.addEnrollees.BorderRadius = 20;
-            this.addEnrollees.BorderSize = 1;
-            this.addEnrollees.FlatAppearance.BorderSize = 0;
-            this.addEnrollees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEnrollees.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEnrollees.ForeColor = System.Drawing.Color.White;
-            this.addEnrollees.Location = new System.Drawing.Point(1073, 6);
-            this.addEnrollees.Name = "addEnrollees";
-            this.addEnrollees.Size = new System.Drawing.Size(175, 50);
-            this.addEnrollees.TabIndex = 19;
-            this.addEnrollees.Text = "Create New";
-            this.addEnrollees.TextColor = System.Drawing.Color.White;
-            this.addEnrollees.UseVisualStyleBackColor = false;
-            this.addEnrollees.Click += new System.EventHandler(this.addEnrollees_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel5.Controls.Add(this.ClassCodeEnroll);
-            this.panel5.Controls.Add(this.declinebtn);
-            this.panel5.Controls.Add(this.sem_enroll);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.stud_enroll);
-            this.panel5.Controls.Add(this.approvebtn);
-            this.panel5.Controls.Add(this.yr_enroll);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(31, 61);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1028, 207);
-            this.panel5.TabIndex = 14;
+            this.panelin.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panelin.Controls.Add(this.ClassCodeEnroll);
+            this.panelin.Controls.Add(this.declinebtn);
+            this.panelin.Controls.Add(this.sem_enroll);
+            this.panelin.Controls.Add(this.label4);
+            this.panelin.Controls.Add(this.stud_enroll);
+            this.panelin.Controls.Add(this.approvebtn);
+            this.panelin.Controls.Add(this.yr_enroll);
+            this.panelin.Controls.Add(this.label5);
+            this.panelin.Controls.Add(this.label7);
+            this.panelin.Controls.Add(this.label8);
+            this.panelin.Controls.Add(this.label6);
+            this.panelin.Location = new System.Drawing.Point(29, 21);
+            this.panelin.Name = "panelin";
+            this.panelin.Size = new System.Drawing.Size(1028, 207);
+            this.panelin.TabIndex = 14;
             // 
             // ClassCodeEnroll
             // 
@@ -264,7 +273,7 @@ namespace ENROLLMENT_System
             this.stud_enroll.Location = new System.Drawing.Point(650, 17);
             this.stud_enroll.Multiline = true;
             this.stud_enroll.Name = "stud_enroll";
-            this.stud_enroll.Size = new System.Drawing.Size(261, 20);
+            this.stud_enroll.Size = new System.Drawing.Size(261, 28);
             this.stud_enroll.TabIndex = 6;
             // 
             // approvebtn
@@ -333,23 +342,13 @@ namespace ENROLLMENT_System
             this.label6.TabIndex = 4;
             this.label6.Text = "Year Level";
             // 
-            // searchtb
-            // 
-            this.searchtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchtb.Location = new System.Drawing.Point(491, 6);
-            this.searchtb.Multiline = true;
-            this.searchtb.Name = "searchtb";
-            this.searchtb.Size = new System.Drawing.Size(568, 34);
-            this.searchtb.TabIndex = 0;
-            this.searchtb.TextChanged += new System.EventHandler(this.searchtb_TextChanged);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.display_enrollees);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 395);
+            this.panel4.Location = new System.Drawing.Point(0, 420);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1353, 342);
+            this.panel4.Size = new System.Drawing.Size(1353, 317);
             this.panel4.TabIndex = 3;
             // 
             // display_enrollees
@@ -360,7 +359,6 @@ namespace ENROLLMENT_System
             this.display_enrollees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.display_enrollees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.applyidDataGridViewTextBoxColumn,
             this.studidDataGridViewTextBoxColumn,
             this.studFnameDataGridViewTextBoxColumn,
@@ -377,6 +375,10 @@ namespace ENROLLMENT_System
             this.display_enrollees.TabIndex = 0;
             this.display_enrollees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.display_enrollees_CellContentClick);
             // 
+            // displayenrolleeResultBindingSource
+            // 
+            this.displayenrolleeResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_enrolleeResult);
+            // 
             // Edit
             // 
             this.Edit.HeaderText = "Edit";
@@ -384,14 +386,6 @@ namespace ENROLLMENT_System
             this.Edit.ReadOnly = true;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // applyidDataGridViewTextBoxColumn
             // 
@@ -449,10 +443,6 @@ namespace ENROLLMENT_System
             this.unameDataGridViewTextBoxColumn.Name = "unameDataGridViewTextBoxColumn";
             this.unameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // displayenrolleeResultBindingSource
-            // 
-            this.displayenrolleeResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_enrolleeResult);
-            // 
             // Enroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,7 +450,7 @@ namespace ENROLLMENT_System
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.enrollpanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -470,10 +460,9 @@ namespace ENROLLMENT_System
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.enrollpanel.ResumeLayout(false);
+            this.panelin.ResumeLayout(false);
+            this.panelin.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.display_enrollees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayenrolleeResultBindingSource)).EndInit();
@@ -485,7 +474,7 @@ namespace ENROLLMENT_System
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel enrollpanel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbtime;
@@ -502,13 +491,13 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox searchtb;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelin;
         private System.Windows.Forms.DataGridView display_enrollees;
         private TRControls.TRButtons addEnrollees;
         private TRControls.TRButtons submitbtn;
         private TRControls.TRButtons updatebtn;
+        private System.Windows.Forms.BindingSource displayenrolleeResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn applyidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studFnameDataGridViewTextBoxColumn;
@@ -517,6 +506,5 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.DataGridViewTextBoxColumn applyYrLvlDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource displayenrolleeResultBindingSource;
     }
 }

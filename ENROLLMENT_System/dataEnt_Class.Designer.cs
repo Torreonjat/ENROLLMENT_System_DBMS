@@ -74,7 +74,6 @@ namespace ENROLLMENT_System
             this.displayClass_GridView = new System.Windows.Forms.DataGridView();
             this.displayclassResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -208,6 +207,7 @@ namespace ENROLLMENT_System
             this.updateClass.Text = "Update";
             this.updateClass.TextColor = System.Drawing.Color.White;
             this.updateClass.UseVisualStyleBackColor = false;
+            this.updateClass.Click += new System.EventHandler(this.updateClass_Click);
             // 
             // savebtn
             // 
@@ -246,6 +246,7 @@ namespace ENROLLMENT_System
             this.thirdSched.Text = "3rd Schedule";
             this.thirdSched.TextColor = System.Drawing.Color.White;
             this.thirdSched.UseVisualStyleBackColor = false;
+            this.thirdSched.Click += new System.EventHandler(this.thirdSched_Click);
             // 
             // secondSched
             // 
@@ -264,6 +265,7 @@ namespace ENROLLMENT_System
             this.secondSched.Text = "2nd Schedule";
             this.secondSched.TextColor = System.Drawing.Color.White;
             this.secondSched.UseVisualStyleBackColor = false;
+            this.secondSched.Click += new System.EventHandler(this.secondSched_Click);
             // 
             // label17
             // 
@@ -560,7 +562,6 @@ namespace ENROLLMENT_System
             this.displayClass_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayClass_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.classidDataGridViewTextBoxColumn,
             this.subCodeDataGridViewTextBoxColumn,
             this.classCodeDataGridViewTextBoxColumn,
@@ -595,14 +596,6 @@ namespace ENROLLMENT_System
             this.Edit.ReadOnly = true;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // classidDataGridViewTextBoxColumn
             // 
@@ -778,7 +771,6 @@ namespace ENROLLMENT_System
         private TRControls.TRButtons secondSched;
         private System.Windows.Forms.BindingSource displayclassResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn classidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classCodeDataGridViewTextBoxColumn;

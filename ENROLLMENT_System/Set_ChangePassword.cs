@@ -23,8 +23,25 @@ namespace ENROLLMENT_System
 
         private void proceedBtn_Click(object sender, EventArgs e)
         {
-            contactpanel.Hide();
-            passpanel.Show();
+            var resContact = db.select_Contact(tbcontactNum.Text).SingleOrDefault();
+            try
+            {
+                if (resContact != null)
+                {
+                    contactpanel.Hide();
+                    passpanel.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error: Contact doesn't match to an account");
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
         }
 
         private void Submit_Click(object sender, EventArgs e)
@@ -40,17 +57,14 @@ namespace ENROLLMENT_System
                     int ID = resultnum.U_id;
                     string currentPass = resultnum.U_pass;
 
-                    // Get the new password entered by the user
                     string newPass = tbpass.Text;
 
-                    // Validate the new password using a regular expression
                     if (!regpass.IsMatch(newPass))
                     {
                         MessageBox.Show("Invalid password. Password must consist of letters and numbers and have a minimum length of 6 characters.", "Message");
                         return;
                     }
 
-                    // Confirm that the new password matches the confirmation password
                     if (newPass != tbconpass.Text)
                     {
                         MessageBox.Show("Password doesn't match! Try again.", "Message");

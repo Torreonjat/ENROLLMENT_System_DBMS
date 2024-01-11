@@ -39,18 +39,17 @@ namespace ENROLLMENT_System
             this.Sectsave = new ENROLLMENT_System.TRControls.TRButtons();
             this.Sect_block = new System.Windows.Forms.ComboBox();
             this.section_GridView = new System.Windows.Forms.DataGridView();
+            this.displaysectResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sec_yr = new System.Windows.Forms.ComboBox();
             this.Sect_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.sectidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sectextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displaysectResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.section_GridView)).BeginInit();
@@ -181,7 +180,6 @@ namespace ENROLLMENT_System
             this.section_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.section_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.sectidDataGridViewTextBoxColumn,
             this.sectnameDataGridViewTextBoxColumn,
             this.sectyearDataGridViewTextBoxColumn,
@@ -193,6 +191,10 @@ namespace ENROLLMENT_System
             this.section_GridView.Size = new System.Drawing.Size(823, 524);
             this.section_GridView.TabIndex = 21;
             this.section_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.section_GridView_CellContentClick);
+            // 
+            // displaysectResultBindingSource
+            // 
+            this.displaysectResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_sectResult);
             // 
             // sec_yr
             // 
@@ -255,14 +257,6 @@ namespace ENROLLMENT_System
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
             // sectidDataGridViewTextBoxColumn
             // 
             this.sectidDataGridViewTextBoxColumn.DataPropertyName = "Sect_id";
@@ -290,10 +284,6 @@ namespace ENROLLMENT_System
             this.sectextDataGridViewTextBoxColumn.HeaderText = "Sect_ext";
             this.sectextDataGridViewTextBoxColumn.Name = "sectextDataGridViewTextBoxColumn";
             this.sectextDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // displaysectResultBindingSource
-            // 
-            this.displaysectResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_sectResult);
             // 
             // dataEnt_Section
             // 
@@ -332,12 +322,11 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.ComboBox Sect_block;
         private TRControls.TRButtons Sectupdate;
         private TRControls.TRButtons Sectsave;
+        private System.Windows.Forms.BindingSource displaysectResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn sectidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sectnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sectyearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sectextDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource displaysectResultBindingSource;
     }
 }

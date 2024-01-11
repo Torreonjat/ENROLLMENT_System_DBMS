@@ -34,7 +34,8 @@ namespace ENROLLMENT_System
             this.addStud = new ENROLLMENT_System.TRControls.TRButtons();
             this.searchstud = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.studpanel = new System.Windows.Forms.Panel();
+            this.Updatebtn = new ENROLLMENT_System.TRControls.TRButtons();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Guardian_num = new System.Windows.Forms.TextBox();
@@ -64,9 +65,8 @@ namespace ENROLLMENT_System
             this.Lname_Stud = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.student_GridView = new System.Windows.Forms.DataGridView();
-            this.Updatebtn = new ENROLLMENT_System.TRControls.TRButtons();
+            this.displaystudentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.studidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studLnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,9 +82,8 @@ namespace ENROLLMENT_System
             this.studGuardiannoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.progidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prognameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.displaystudentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.studpanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displaystudentResultBindingSource)).BeginInit();
@@ -141,41 +140,61 @@ namespace ENROLLMENT_System
             this.label1.TabIndex = 14;
             this.label1.Text = "STUDENT MASTER LIST";
             // 
-            // panel2
+            // studpanel
             // 
-            this.panel2.Controls.Add(this.Updatebtn);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.Guardian_num);
-            this.panel2.Controls.Add(this.Guardian_Stud);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.Address_Stud);
-            this.panel2.Controls.Add(this.bDate_Stud);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.Email_Stud);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.Gender_stud);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.Phone_Stud);
-            this.panel2.Controls.Add(this.Program_Stud);
-            this.panel2.Controls.Add(this.Year_Stud);
-            this.panel2.Controls.Add(this.Status_Stud);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.Mname_Stud);
-            this.panel2.Controls.Add(this.Fname_Stud);
-            this.panel2.Controls.Add(this.Lname_Stud);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1353, 293);
-            this.panel2.TabIndex = 1;
+            this.studpanel.Controls.Add(this.Updatebtn);
+            this.studpanel.Controls.Add(this.label15);
+            this.studpanel.Controls.Add(this.label14);
+            this.studpanel.Controls.Add(this.Guardian_num);
+            this.studpanel.Controls.Add(this.Guardian_Stud);
+            this.studpanel.Controls.Add(this.label13);
+            this.studpanel.Controls.Add(this.label12);
+            this.studpanel.Controls.Add(this.Address_Stud);
+            this.studpanel.Controls.Add(this.bDate_Stud);
+            this.studpanel.Controls.Add(this.label11);
+            this.studpanel.Controls.Add(this.label10);
+            this.studpanel.Controls.Add(this.Email_Stud);
+            this.studpanel.Controls.Add(this.label9);
+            this.studpanel.Controls.Add(this.Gender_stud);
+            this.studpanel.Controls.Add(this.label8);
+            this.studpanel.Controls.Add(this.label7);
+            this.studpanel.Controls.Add(this.label6);
+            this.studpanel.Controls.Add(this.label5);
+            this.studpanel.Controls.Add(this.Phone_Stud);
+            this.studpanel.Controls.Add(this.Program_Stud);
+            this.studpanel.Controls.Add(this.Year_Stud);
+            this.studpanel.Controls.Add(this.Status_Stud);
+            this.studpanel.Controls.Add(this.label4);
+            this.studpanel.Controls.Add(this.label3);
+            this.studpanel.Controls.Add(this.label2);
+            this.studpanel.Controls.Add(this.Mname_Stud);
+            this.studpanel.Controls.Add(this.Fname_Stud);
+            this.studpanel.Controls.Add(this.Lname_Stud);
+            this.studpanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.studpanel.Location = new System.Drawing.Point(0, 80);
+            this.studpanel.Name = "studpanel";
+            this.studpanel.Size = new System.Drawing.Size(1353, 293);
+            this.studpanel.TabIndex = 1;
+            // 
+            // Updatebtn
+            // 
+            this.Updatebtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.Updatebtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.Updatebtn.BorderColor = System.Drawing.Color.Black;
+            this.Updatebtn.BorderRadius = 20;
+            this.Updatebtn.BorderSize = 1;
+            this.Updatebtn.FlatAppearance.BorderSize = 0;
+            this.Updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updatebtn.ForeColor = System.Drawing.Color.White;
+            this.Updatebtn.Location = new System.Drawing.Point(1105, 206);
+            this.Updatebtn.Name = "Updatebtn";
+            this.Updatebtn.Size = new System.Drawing.Size(221, 59);
+            this.Updatebtn.TabIndex = 53;
+            this.Updatebtn.Text = "Update";
+            this.Updatebtn.TextColor = System.Drawing.Color.White;
+            this.Updatebtn.UseVisualStyleBackColor = false;
+            this.Updatebtn.Click += new System.EventHandler(this.Updatebtn_Click);
             // 
             // label15
             // 
@@ -463,7 +482,6 @@ namespace ENROLLMENT_System
             this.student_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.student_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
-            this.Delete,
             this.studidDataGridViewTextBoxColumn,
             this.studFnameDataGridViewTextBoxColumn,
             this.studLnameDataGridViewTextBoxColumn,
@@ -487,25 +505,9 @@ namespace ENROLLMENT_System
             this.student_GridView.TabIndex = 0;
             this.student_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.student_GridView_CellContentClick);
             // 
-            // Updatebtn
+            // displaystudentResultBindingSource
             // 
-            this.Updatebtn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.Updatebtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.Updatebtn.BorderColor = System.Drawing.Color.Black;
-            this.Updatebtn.BorderRadius = 20;
-            this.Updatebtn.BorderSize = 1;
-            this.Updatebtn.FlatAppearance.BorderSize = 0;
-            this.Updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updatebtn.ForeColor = System.Drawing.Color.White;
-            this.Updatebtn.Location = new System.Drawing.Point(1105, 206);
-            this.Updatebtn.Name = "Updatebtn";
-            this.Updatebtn.Size = new System.Drawing.Size(221, 59);
-            this.Updatebtn.TabIndex = 53;
-            this.Updatebtn.Text = "Update";
-            this.Updatebtn.TextColor = System.Drawing.Color.White;
-            this.Updatebtn.UseVisualStyleBackColor = false;
-            this.Updatebtn.Click += new System.EventHandler(this.Updatebtn_Click);
+            this.displaystudentResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_studentResult);
             // 
             // Edit
             // 
@@ -514,14 +516,6 @@ namespace ENROLLMENT_System
             this.Edit.ReadOnly = true;
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // studidDataGridViewTextBoxColumn
             // 
@@ -628,10 +622,6 @@ namespace ENROLLMENT_System
             this.prognameDataGridViewTextBoxColumn.Name = "prognameDataGridViewTextBoxColumn";
             this.prognameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // displaystudentResultBindingSource
-            // 
-            this.displaystudentResultBindingSource.DataSource = typeof(ENROLLMENT_System.display_studentResult);
-            // 
             // dataEnt_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,15 +629,15 @@ namespace ENROLLMENT_System
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1353, 737);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.studpanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dataEnt_Student";
             this.Text = "dataEnt_Student";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.studpanel.ResumeLayout(false);
+            this.studpanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.student_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displaystudentResultBindingSource)).EndInit();
@@ -658,7 +648,7 @@ namespace ENROLLMENT_System
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel studpanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox searchstud;
         private System.Windows.Forms.Label label1;
@@ -692,8 +682,8 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.DataGridView student_GridView;
         private TRControls.TRButtons addStud;
         private TRControls.TRButtons Updatebtn;
+        private System.Windows.Forms.BindingSource displaystudentResultBindingSource;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn studidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studFnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studLnameDataGridViewTextBoxColumn;
@@ -709,6 +699,5 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.DataGridViewTextBoxColumn studGuardiannoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn progidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prognameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource displaystudentResultBindingSource;
     }
 }

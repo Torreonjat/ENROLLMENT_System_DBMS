@@ -32,7 +32,41 @@ namespace ENROLLMENT_System
             contactbox.Text = "";
             emailbox.Text = "";
         }
-
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is DateTimePicker dateTimePicker)
+                {
+                    if (dateTimePicker.Value == DateTimePicker.MinimumDateTime)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void Submit_Click(object sender, EventArgs e)
         {
             string lstname = Lname.Text;
@@ -49,16 +83,11 @@ namespace ENROLLMENT_System
             Regex regphone = new Regex(@"(09|\+639)[-.\s]?[0-9]{9}");
 
 
-            bool isFnameEmpty = string.IsNullOrWhiteSpace(fstname);
-            bool isLnameEmpty = string.IsNullOrWhiteSpace(lstname);
-            bool isGenderEmpty = string.IsNullOrWhiteSpace(gender);
-            bool isAddressEmpty = string.IsNullOrWhiteSpace(Addr);
-            bool isEmailEmpty = string.IsNullOrWhiteSpace(email);
-            bool isContactEmpty = string.IsNullOrWhiteSpace(contact);
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (isFnameEmpty || isLnameEmpty || isAddressEmpty || isEmailEmpty || isContactEmpty || isGenderEmpty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }

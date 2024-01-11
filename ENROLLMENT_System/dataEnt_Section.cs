@@ -32,19 +32,46 @@ namespace ENROLLMENT_System
             Sect_block.SelectedIndex = -1;
         }
 
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         private void Sectsave_Click(object sender, EventArgs e)
         {
             string Secname = Sect_name.Text;
             string Secyear = sec_yr.SelectedItem?.ToString();
             string Sectype = Sect_block.SelectedItem?.ToString();
 
-            bool isSecnameEmpty = string.IsNullOrWhiteSpace(Secname);
-            bool isSecYrEmpty = string.IsNullOrWhiteSpace(Secyear);
-            bool isSectypeEmpty = string.IsNullOrWhiteSpace(Sectype);
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (isSecnameEmpty || isSecYrEmpty || isSectypeEmpty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
@@ -86,13 +113,11 @@ namespace ENROLLMENT_System
             string Secyear = sec_yr.SelectedItem.ToString();
             string Secblock = Sect_block.SelectedItem.ToString();
 
-            bool isSecnameEmpty = string.IsNullOrWhiteSpace(Secname);
-            bool isSecYrEmpty = string.IsNullOrWhiteSpace(Secyear);
-            bool isSectypeEmpty = string.IsNullOrWhiteSpace(Secblock);
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
 
             try
             {
-                if (isSecnameEmpty || isSectypeEmpty)
+                if (!allTextBoxesFilled)
                 {
                     MessageBox.Show("Please fill in all required fields.", "Validation Error");
                 }
@@ -134,20 +159,10 @@ namespace ENROLLMENT_System
                 {
                     Sectsave.Hide();
                     Sectupdate.Show();
-                    id = int.Parse(section_GridView.CurrentRow.Cells[2].Value.ToString());
-                    Sect_name.Text = section_GridView.CurrentRow.Cells[3].Value.ToString();
-                    sec_yr.SelectedItem = section_GridView.CurrentRow.Cells[4].Value.ToString();
-                    Sect_block.SelectedItem = section_GridView.CurrentRow.Cells[5].Value.ToString();
-                }
-                else if (section_GridView.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        id = int.Parse(section_GridView.CurrentRow.Cells[0].Value.ToString());
-                        db.delete_sect(id);
-                        clear();
-                        displaySect();
-                    }
+                    id = int.Parse(section_GridView.CurrentRow.Cells[1].Value.ToString());
+                    Sect_name.Text = section_GridView.CurrentRow.Cells[2].Value.ToString();
+                    sec_yr.SelectedItem = section_GridView.CurrentRow.Cells[3].Value.ToString();
+                    Sect_block.SelectedItem = section_GridView.CurrentRow.Cells[4].Value.ToString();
                 }
             }
             catch (Exception ex)

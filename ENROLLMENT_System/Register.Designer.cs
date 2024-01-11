@@ -34,7 +34,6 @@ namespace ENROLLMENT_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.conP = new System.Windows.Forms.Button();
             this.showP = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnSignup = new ENROLLMENT_System.TRControls.TRButtons();
             this.reg_Contact = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@ namespace ENROLLMENT_System
             // 
             this.panel1.Controls.Add(this.conP);
             this.panel1.Controls.Add(this.showP);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnSignup);
             this.panel1.Controls.Add(this.reg_Contact);
             this.panel1.Controls.Add(this.label7);
@@ -116,15 +114,6 @@ namespace ENROLLMENT_System
             this.showP.TabIndex = 52;
             this.showP.UseVisualStyleBackColor = true;
             this.showP.Click += new System.EventHandler(this.showP_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 344);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(179, 13);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Press the button to open the camera\r\n";
             // 
             // btnSignup
             // 
@@ -281,7 +270,7 @@ namespace ENROLLMENT_System
             // 
             // pbCapture
             // 
-            this.pbCapture.Location = new System.Drawing.Point(96, 434);
+            this.pbCapture.Location = new System.Drawing.Point(100, 368);
             this.pbCapture.Name = "pbCapture";
             this.pbCapture.Size = new System.Drawing.Size(131, 133);
             this.pbCapture.TabIndex = 1;
@@ -336,7 +325,6 @@ namespace ENROLLMENT_System
         private System.Windows.Forms.TextBox reg_Fname;
         private System.Windows.Forms.Label label3;
         private TRControls.TRButtons btnSignup;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button conP;
         private System.Windows.Forms.Button showP;
     }

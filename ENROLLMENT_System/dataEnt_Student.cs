@@ -19,6 +19,7 @@ namespace ENROLLMENT_System
         {
             InitializeComponent();
             LoadProgramname();
+            studpanel.Hide();
             display_Stud();
             Updatebtn.Hide();
         }
@@ -26,14 +27,10 @@ namespace ENROLLMENT_System
         {
             try
             {
-                var programNames = db.display_progname()
-                                      .Select(result => result.ProgramName)
-                                      .ToList();
+                var programNames = db.display_progname().Select(result => result.ProgramName).ToList();
 
-                // Add a default item at the top
                 programNames.Insert(0, " ");
 
-                // Assuming Stud_Prog is the name of your ComboBox control
                 Program_Stud.DataSource = programNames;
             }
             catch (Exception ex)
@@ -44,6 +41,7 @@ namespace ENROLLMENT_System
 
         private void addStud_Click(object sender, EventArgs e)
         {
+            studpanel.Show();
             try
             {
                 data_AddStudent dataentstudent = new data_AddStudent();
@@ -64,37 +62,25 @@ namespace ENROLLMENT_System
         private void data_AddStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
-            student_GridView.DataSource = null; // Clear the existing data source
-            student_GridView.Rows.Clear(); // Clear the existing rows
-            student_GridView.Refresh(); // Refresh the DataGridView
+            student_GridView.DataSource = null; 
+            student_GridView.Rows.Clear(); 
+            student_GridView.Refresh(); 
 
-            // Load the updated data from the database
             student_GridView.DataSource = db.display_student();
         }
 
         private void student_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            studpanel.Show();
             try
             {
                 if (student_GridView.Columns[e.ColumnIndex].Name == "Edit")
                 {
                     Updatebtn.Show();
                     setProgname();
-                    int rowIndex = e.RowIndex; // Get the selected row index
+                    int rowIndex = e.RowIndex; 
 
                     RetrieveDataByIndex(rowIndex);
-                }
-                else if (student_GridView.Columns[e.ColumnIndex].Name == "Delete")
-                {
-                    // Retrieve the ID from the selected row
-
-                    if (MessageBox.Show("Are you sure you want to delete this record? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        id = id = int.Parse(student_GridView.CurrentRow.Cells[0].Value.ToString());
-                        db.delete_stud(id);
-                        MessageBox.Show("Successfully Deleted", "DELETE");
-                        student_GridView.DataSource = db.display_student();
-                    }
                 }
             }
             catch (Exception ex)
@@ -106,15 +92,12 @@ namespace ENROLLMENT_System
         {
             try
             {
-                int studentId = int.Parse(student_GridView.CurrentRow.Cells[2].Value.ToString());
+                int studentId = int.Parse(student_GridView.CurrentRow.Cells[1].Value.ToString());
 
-                // Assuming you have a method to get Prog_id for a student from your database
                 int progId = GetProgIdForStudent(studentId);
 
-                // Call the stored procedure to get the program name based on the Prog_id
                 string programName = GetProgramName(progId);
 
-                // Set the dropdown list value to the program name
                 Program_Stud.SelectedItem = programName;
             }
             catch (Exception ex)
@@ -126,17 +109,13 @@ namespace ENROLLMENT_System
         {
             if (studentId != 0)
             {
-                // Assuming db.select_ProgIdbyId returns an integer
-                int progId = int.Parse(student_GridView.CurrentRow.Cells[15].Value.ToString());
+                int progId = int.Parse(student_GridView.CurrentRow.Cells[14].Value.ToString());
                 if (progId != 0)
                 {
-                    // If you already have the Prog_id, no need to query it again
                     return progId;
                 }
             }
-
-            // Return a default value or handle the case where studentId is 0
-            return 0; // Change this default value accordingly
+            return 0; 
         }
 
 
@@ -146,16 +125,14 @@ namespace ENROLLMENT_System
             {
                 using (var db = new DataClassEnrollmentDataContext())
                 {
-                    // Assuming select_progname is a LINQ to SQL method mapped to the stored procedure
                     var result = db.select_progname(progId).SingleOrDefault();
 
-                    // Ensure the result is not null before accessing properties
                     if (result != null)
                     {
-                        return result.ProgramName; // Access the ProgramName property
+                        return result.ProgramName; 
                     }
                 }
-                return string.Empty; // Return an empty string if no result is found
+                return string.Empty; 
             }
             catch (Exception ex)
             {
@@ -174,7 +151,6 @@ namespace ENROLLMENT_System
                 {
                     var row = result[rowIndex];
 
-                    // Access columns by property name
                     id = row.Stud_id;
                     Fname_Stud.Text = row.Stud_Fname;
                     Lname_Stud.Text = row.Stud_Lname;
@@ -188,7 +164,6 @@ namespace ENROLLMENT_System
                     Guardian_num.Text = row.Stud_Guardian_no;
 
 
-                    // Access columns by property name
                     string StuStatus = row.Stud_Status;
                     string StuYear = row.Stud_year;
                     string StuGender = row.Stud_Gender;
@@ -198,7 +173,6 @@ namespace ENROLLMENT_System
                     int statusYIndex = FindComboBoxIndexByValue(Year_Stud, StuYear);
                     int statusGenderIndex = FindComboBoxIndexByValue(Gender_stud, StuGender);
 
-                    // Set the selected item in the ComboBox based on the retrieved status
                     if (statusIndex != -1)
                     {
                         Status_Stud.SelectedIndex = statusIndex;
@@ -214,13 +188,11 @@ namespace ENROLLMENT_System
                 }
                 else
                 {
-                    // Handle the case where the result set doesn't have enough rows
                     Console.WriteLine("Row index out of range");
                 }
             }
             catch (Exception ex)
             {
-                // Handle exceptions
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
@@ -233,99 +205,114 @@ namespace ENROLLMENT_System
                     return i;
                 }
             }
-            return -1; // Value not found
+            return -1; 
         }
-
+        private bool AllInputControlsFilled(Control control)
+        {
+            foreach (Control ctrl in control.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox comboBox)
+                {
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl is DateTimePicker dateTimePicker)
+                {
+                    if (dateTimePicker.Value == DateTimePicker.MinimumDateTime)
+                    {
+                        return false;
+                    }
+                }
+                else if (ctrl.HasChildren)
+                {
+                    if (!AllInputControlsFilled(ctrl))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         private void Updatebtn_Click(object sender, EventArgs e)
         {
+            string studStatus = Status_Stud.SelectedItem.ToString();
+            string studYear = Year_Stud.SelectedItem.ToString();
+            DateTime bdate = bDate_Stud.Value.Date;
+            string Guardianame = Guardian_Stud.Text;
+            string progname = Program_Stud.SelectedValue.ToString();
+
+            bool allTextBoxesFilled = AllInputControlsFilled(this);
+
+            Regex sEmail = new Regex(@"^[\w\.-]+@[\w\.-]+\.\w+$", RegexOptions.IgnoreCase);
+            Regex sPhone = new Regex(@"(09|\+639)[-.\s]?[0-9]{9}");
+
+            try
             {
-                string studStatus = Status_Stud.SelectedItem.ToString();
-                string studYear = Year_Stud.SelectedItem.ToString();
-                DateTime bdate = bDate_Stud.Value.Date;
-                string Guardianame = Guardian_Stud.Text;
-                string progname = Program_Stud.SelectedValue.ToString();
-
-                bool isSLnameEmpty = string.IsNullOrWhiteSpace(Lname_Stud.Text);
-                bool isSFnameEmpty = string.IsNullOrWhiteSpace(Fname_Stud.Text);
-                bool isSStatusEmpty = string.IsNullOrWhiteSpace(studStatus);
-                bool isSYear = string.IsNullOrWhiteSpace(studYear);
-                bool isSContactEmpty = string.IsNullOrWhiteSpace(Phone_Stud.Text);
-                bool isSEmailEmpty = string.IsNullOrWhiteSpace(Email_Stud.Text);
-                bool isSGenderEmpty = string.IsNullOrWhiteSpace(Gender_stud.Text);
-                bool isSAddrEmpty = string.IsNullOrWhiteSpace(Address_Stud.Text);
-                bool isSGuardianameEmpty = string.IsNullOrWhiteSpace(Guardianame);
-                bool isSGuardiannumtEmpty = string.IsNullOrWhiteSpace(Phone_Stud.Text);
-
-                Regex sEmail = new Regex(@"^[\w\.-]+@[\w\.-]+\.\w+$", RegexOptions.IgnoreCase);
-                Regex sPhone = new Regex(@"(09|\+639)[-.\s]?[0-9]{9}");
-
-                try
+                if (!sPhone.IsMatch(Phone_Stud.Text) || !sPhone.IsMatch(Guardian_num.Text))
                 {
-                    if (isSLnameEmpty || isSFnameEmpty || isSStatusEmpty || isSYear || isSContactEmpty || isSEmailEmpty || isSGenderEmpty || isSAddrEmpty || isSGuardianameEmpty || isSGuardiannumtEmpty)
+                    MessageBox.Show("Invalid Input for phone: ", "ERROR");
+                    return;
+                }
+                if (sEmail.IsMatch(Email_Stud.Text))
+                {
+                    MessageBox.Show("Invalid Input for email: " + Email_Stud.Text, "ERROR");
+                }
+
+                if (!allTextBoxesFilled)
+                {
+                    MessageBox.Show("Please fill in all required fields.", "Validation Error");
+                }
+                else
+                {
+                    try
                     {
-                        MessageBox.Show("Please fill in all required fields.", "Validation Error");
-                    }
-                    else
-                    {
-                        if (sPhone.IsMatch(Phone_Stud.Text) || sPhone.IsMatch(Guardian_num.Text))
+                        string[] progNameParts = Program_Stud.SelectedValue.ToString().Trim().Split(' ');
+
+                        string progStudname = progNameParts.ElementAtOrDefault(0) ?? string.Empty.Trim();
+                        string progStudtype = progNameParts.ElementAtOrDefault(1) ?? string.Empty.Trim();
+                        var resultid = db.select_progId(progStudname, progStudtype).SingleOrDefault();
+
+                        if (resultid != null)
                         {
-                            if (sEmail.IsMatch(Email_Stud.Text))
+                            int? pId = resultid.Prog_id;
+
+                            if (pId.HasValue)
                             {
-                                try
-                                {
-                                    string[] progNameParts = Program_Stud.SelectedValue.ToString().Trim().Split(' ');
-                                    // Debugging statement
-
-                                    string progStudname = progNameParts.ElementAtOrDefault(0) ?? string.Empty.Trim();
-                                    string progStudtype = progNameParts.ElementAtOrDefault(1) ?? string.Empty.Trim();
-                                    var resultid = db.select_progId(progStudname, progStudtype).SingleOrDefault();
-
-                                    if (resultid != null)
-                                    {
-                                        int? pId = resultid.Prog_id;
-
-                                        if (pId.HasValue)
-                                        {
-                                            int getprogid = pId.Value;
-                                            db.update_stud(id, Fname_Stud.Text, Lname_Stud.Text, Mname_Stud.Text, studStatus, studYear, Phone_Stud.Text, Email_Stud.Text, Gender_stud.Text, bdate, Address_Stud.Text, Guardianame, Guardian_num.Text, getprogid);
-                                            MessageBox.Show("Recorded Successfully", "SAVE");
-                                            updateClear();
-                                            display_Stud();
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("No matching program found for " + progname, "Error");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Error: Result is null", "Error");
-                                    }
-
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("An error has occurred: " + ex.Message, "Error");
-                                }
-
-
+                                int getprogid = pId.Value;
+                                db.update_stud(id, Fname_Stud.Text, Lname_Stud.Text, Mname_Stud.Text, studStatus, studYear, Phone_Stud.Text, Email_Stud.Text, Gender_stud.Text, bdate, Address_Stud.Text, Guardianame, Guardian_num.Text, getprogid);
+                                MessageBox.Show("Recorded Successfully", "SAVE");
+                                updateClear();
+                                display_Stud();
+                                studpanel.Hide();
                             }
                             else
                             {
-                                MessageBox.Show("Invalid Input for email: " + Email_Stud.Text, "ERROR");
+                                MessageBox.Show("No matching program found for " + progname, "Error");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Invalid Input for phone: ", "ERROR");
+                            MessageBox.Show("Error: Result is null", "Error");
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error has occurred: " + ex.Message, "Error");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error has occured" + ex.Message, "Error");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occured" + ex.Message, "Error");
             }
         }
         private void updateClear()
