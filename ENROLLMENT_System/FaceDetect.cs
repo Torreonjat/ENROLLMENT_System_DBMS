@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FaceRecognition;
+using Emgu.CV;
 
 namespace ENROLLMENT_System
 {

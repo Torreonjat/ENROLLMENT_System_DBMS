@@ -33,5 +33,16 @@ namespace ENROLLMENT_System.Properties {
                 return ((string)(this["db_enrollmentConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-1MVDPJFL\\SQLEXPRESS;Initial Catalog=db_enrollment;Integrated S" +
+            "ecurity=True")]
+        public string db_enrollmentConnectionString1 {
+            get {
+                return ((string)(this["db_enrollmentConnectionString1"]));
+            }
+        }
     }
 }
