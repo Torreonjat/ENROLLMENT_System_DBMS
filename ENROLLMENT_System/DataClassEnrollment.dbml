@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_enrollment" Class="DataClassEnrollmentDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-PPQMVH3\SQLEXPRESS;Initial Catalog=db_enrollment;Integrated Security=True" SettingsObjectName="ENROLLMENT_System.Properties.Settings" SettingsPropertyName="db_enrollmentConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLASS" Member="CLASSes">
     <Type Name="CLASS">
       <Column Name="Class_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -194,6 +193,12 @@
       <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.check_pass_exists" Method="check_pass_exists">
+    <Parameter Name="U_pass" Parameter="u_pass" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="check_pass_existsResult">
+      <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.check_Prof_exists" Method="check_Prof_exists">
     <Parameter Name="Prof_Fname" Parameter="prof_Fname" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Prof_Lname" Parameter="prof_Lname" Type="System.String" DbType="VarChar(50)" />
@@ -239,6 +244,12 @@
       <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.check_username_exists" Method="check_username_exists">
+    <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="check_username_existsResult">
+      <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.count_class" Method="count_class">
     <ElementType Name="count_classResult">
       <Column Name="TotalClass" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -258,38 +269,6 @@
     <ElementType Name="count_studentsResult">
       <Column Name="TotalStudents" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.delete_class" Method="delete_class">
-    <Parameter Name="Class_id" Parameter="class_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_enroll" Method="delete_enroll">
-    <Parameter Name="Apply_id" Parameter="apply_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_enroll_app" Method="delete_enroll_app">
-    <Parameter Name="Apply_id" Parameter="apply_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_prof" Method="delete_prof">
-    <Parameter Name="p_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_prog" Method="delete_prog">
-    <Parameter Name="Prog_id" Parameter="prog_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_sect" Method="delete_sect">
-    <Parameter Name="Sect_id" Parameter="sect_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_stud" Method="delete_stud">
-    <Parameter Name="Stud_id" Parameter="stud_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.delete_subj" Method="delete_subj">
-    <Parameter Name="Sub_id" Parameter="sub_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.display_class" Method="display_class">
     <ElementType Name="display_classResult">
@@ -566,6 +545,13 @@
       <Column Name="Class_code" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.select_Contact" Method="select_Contact">
+    <Parameter Name="U_Contact" Parameter="u_Contact" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="select_ContactResult">
+      <Column Name="U_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="U_pass" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.select_ProffesorName" Method="select_ProffesorName">
     <Parameter Name="Prof_id" Parameter="prof_id" Type="System.Int32" DbType="Int" />
     <ElementType Name="select_ProffesorNameResult">
@@ -689,6 +675,11 @@
     <Parameter Name="Class_id" Parameter="class_id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.update_pass" Method="update_pass">
+    <Parameter Name="U_id" Parameter="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Upass" Parameter="upass" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.update_prof" Method="update_prof">
     <Parameter Name="p_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="p_fname" Type="System.String" DbType="VarChar(50)" />
@@ -740,6 +731,14 @@
     <Parameter Name="Sub_units" Parameter="sub_units" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.update_user" Method="update_user">
+    <Parameter Name="U_id" Parameter="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="U_Fname" Parameter="u_Fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="U_Lname" Parameter="u_Lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="U_Contact" Parameter="u_Contact" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.User_login" Method="User_login">
     <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="U_pass" Parameter="u_pass" Type="System.String" DbType="VarChar(25)" />
@@ -751,41 +750,5 @@
       <Column Name="U_pass" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="U_Contact" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.User_type" Method="User_type">
-    <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="U_pass" Parameter="u_pass" Type="System.String" DbType="VarChar(25)" />
-  </Function>
-  <Function Name="dbo.select_Contact" Method="select_Contact">
-    <Parameter Name="U_Contact" Parameter="u_Contact" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="select_ContactResult">
-      <Column Name="U_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="U_pass" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.update_pass" Method="update_pass">
-    <Parameter Name="U_id" Parameter="u_id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Upass" Parameter="upass" Type="System.String" DbType="VarChar(25)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.check_pass_exists" Method="check_pass_exists">
-    <Parameter Name="U_pass" Parameter="u_pass" Type="System.String" DbType="VarChar(25)" />
-    <ElementType Name="check_pass_existsResult">
-      <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.check_username_exists" Method="check_username_exists">
-    <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="check_username_existsResult">
-      <Column Name="MatchingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.update_user" Method="update_user">
-    <Parameter Name="U_id" Parameter="u_id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="U_Fname" Parameter="u_Fname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="U_Lname" Parameter="u_Lname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="U_Contact" Parameter="u_Contact" Type="System.String" DbType="VarChar(15)" />
-    <Return Type="System.Int32" />
   </Function>
 </Database>
