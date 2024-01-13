@@ -173,6 +173,7 @@ namespace ENROLLMENT_System
                     int statusYIndex = FindComboBoxIndexByValue(Year_Stud, StuYear);
                     int statusGenderIndex = FindComboBoxIndexByValue(Gender_stud, StuGender);
 
+
                     if (statusIndex != -1)
                     {
                         Status_Stud.SelectedIndex = statusIndex;
