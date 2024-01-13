@@ -13,11 +13,13 @@ namespace ENROLLMENT_System
 {
     public partial class Set_Profile : Form
     {
+        public int userId = userActive.CurrentUser.User.userid;
         FaceRec fc = new FaceRec();
         DataClassEnrollmentDataContext db = new DataClassEnrollmentDataContext();
         public Set_Profile()
         {
             InitializeComponent();
+            userdetails();
         }
 
         private void btnCameraON_Click(object sender, EventArgs e)
@@ -45,6 +47,19 @@ namespace ENROLLMENT_System
             }
             return true; 
         }
+        private void userdetails()
+        {
+            var resUser = db.select_Userdetail(userId);
+
+            foreach (var item in resUser)
+            {
+                tbUsername.Text = item.U_name;
+                tbUFname.Text = item.U_Fname;
+                tbULname.Text = item.U_Lname;
+                tbContact.Text = item.U_Contact;
+            }
+        }
+
         private void Update_Click(object sender, EventArgs e)
         {
             bool allTextBoxesFilled = AllTextBoxesFilled(this);
@@ -61,8 +76,6 @@ namespace ENROLLMENT_System
                     MessageBox.Show("Open the camera first", "Message");
                 }
 
-                
-                int userId = userActive.CurrentUser.User.userid;
                 
                 if (MessageBox.Show("Are you sure all of the informations are correct?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

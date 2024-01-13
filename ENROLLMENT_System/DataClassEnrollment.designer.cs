@@ -213,6 +213,13 @@ namespace ENROLLMENT_System
 			return ((ISingleResult<check_class_existsResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_pass_exists")]
+		public ISingleResult<check_pass_existsResult> check_pass_exists([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_pass", DbType="VarChar(25)")] string u_pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_pass);
+			return ((ISingleResult<check_pass_existsResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_Prof_exists")]
 		public ISingleResult<check_Prof_existsResult> check_Prof_exists([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Prof_Fname", DbType="VarChar(50)")] string prof_Fname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Prof_Lname", DbType="VarChar(50)")] string prof_Lname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Prof_Mname", DbType="VarChar(10)")] string prof_Mname)
 		{
@@ -255,6 +262,13 @@ namespace ENROLLMENT_System
 			return ((ISingleResult<check_USER_existsResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_username_exists")]
+		public ISingleResult<check_username_existsResult> check_username_exists([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_name);
+			return ((ISingleResult<check_username_existsResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.count_class")]
 		public ISingleResult<count_classResult> count_class()
 		{
@@ -281,62 +295,6 @@ namespace ENROLLMENT_System
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<count_studentsResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_class")]
-		public int delete_class([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Class_id", DbType="Int")] System.Nullable<int> class_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), class_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_enroll")]
-		public int delete_enroll([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apply_id", DbType="Int")] System.Nullable<int> apply_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), apply_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_enroll_app")]
-		public int delete_enroll_app([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apply_id", DbType="Int")] System.Nullable<int> apply_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), apply_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_prof")]
-		public int delete_prof([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_prog")]
-		public int delete_prog([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Prog_id", DbType="Int")] System.Nullable<int> prog_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prog_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_sect")]
-		public int delete_sect([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sect_id", DbType="Int")] System.Nullable<int> sect_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sect_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_stud")]
-		public int delete_stud([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Stud_id", DbType="Int")] System.Nullable<int> stud_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), stud_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_subj")]
-		public int delete_subj([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sub_id", DbType="Int")] System.Nullable<int> sub_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub_id);
-			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.display_class")]
@@ -535,6 +493,13 @@ namespace ENROLLMENT_System
 			return ((ISingleResult<select_classnameResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_Contact")]
+		public ISingleResult<select_ContactResult> select_Contact([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Contact", DbType="VarChar(15)")] string u_Contact)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_Contact);
+			return ((ISingleResult<select_ContactResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_ProffesorName")]
 		public ISingleResult<select_ProffesorNameResult> select_ProffesorName([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Prof_id", DbType="Int")] System.Nullable<int> prof_id)
 		{
@@ -633,6 +598,13 @@ namespace ENROLLMENT_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_pass")]
+		public int update_pass([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_id", DbType="Int")] System.Nullable<int> u_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Upass", DbType="VarChar(25)")] string upass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_id, upass);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_prof")]
 		public int update_prof([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string p_fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string p_lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string p_mname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string p_contact, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(25)")] string p_email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string p_gender, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> p_bdate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string p_addr)
 		{
@@ -668,6 +640,13 @@ namespace ENROLLMENT_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_user")]
+		public int update_user([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_id", DbType="Int")] System.Nullable<int> u_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Fname", DbType="VarChar(50)")] string u_Fname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Lname", DbType="VarChar(50)")] string u_Lname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Contact", DbType="VarChar(15)")] string u_Contact)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_id, u_name, u_Fname, u_Lname, u_Contact);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.User_login")]
 		public ISingleResult<User_loginResult> User_login([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_pass", DbType="VarChar(25)")] string u_pass)
 		{
@@ -675,45 +654,11 @@ namespace ENROLLMENT_System
 			return ((ISingleResult<User_loginResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.User_type")]
-		public void User_type([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_pass", DbType="VarChar(25)")] string u_pass)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_Userdetail")]
+		public ISingleResult<select_UserdetailResult> select_Userdetail([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_id", DbType="Int")] System.Nullable<int> u_id)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_name, u_pass);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.select_Contact")]
-		public ISingleResult<select_ContactResult> select_Contact([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Contact", DbType="VarChar(15)")] string u_Contact)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_Contact);
-			return ((ISingleResult<select_ContactResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_pass")]
-		public int update_pass([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_id", DbType="Int")] System.Nullable<int> u_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Upass", DbType="VarChar(25)")] string upass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_id, upass);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_pass_exists")]
-		public ISingleResult<check_pass_existsResult> check_pass_exists([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_pass", DbType="VarChar(25)")] string u_pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_pass);
-			return ((ISingleResult<check_pass_existsResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_username_exists")]
-		public ISingleResult<check_username_existsResult> check_username_exists([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_name);
-			return ((ISingleResult<check_username_existsResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.update_user")]
-		public int update_user([global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_id", DbType="Int")] System.Nullable<int> u_id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_name", DbType="VarChar(50)")] string u_name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Fname", DbType="VarChar(50)")] string u_Fname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Lname", DbType="VarChar(50)")] string u_Lname, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="U_Contact", DbType="VarChar(15)")] string u_Contact)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_id, u_name, u_Fname, u_Lname, u_Contact);
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), u_id);
+			return ((ISingleResult<select_UserdetailResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3087,6 +3032,32 @@ namespace ENROLLMENT_System
 		}
 	}
 	
+	public partial class check_pass_existsResult
+	{
+		
+		private System.Nullable<int> _MatchingCount;
+		
+		public check_pass_existsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchingCount", DbType="Int")]
+		public System.Nullable<int> MatchingCount
+		{
+			get
+			{
+				return this._MatchingCount;
+			}
+			set
+			{
+				if ((this._MatchingCount != value))
+				{
+					this._MatchingCount = value;
+				}
+			}
+		}
+	}
+	
 	public partial class check_Prof_existsResult
 	{
 		
@@ -3223,6 +3194,32 @@ namespace ENROLLMENT_System
 		private System.Nullable<int> _MatchingCount;
 		
 		public check_USER_existsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchingCount", DbType="Int")]
+		public System.Nullable<int> MatchingCount
+		{
+			get
+			{
+				return this._MatchingCount;
+			}
+			set
+			{
+				if ((this._MatchingCount != value))
+				{
+					this._MatchingCount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class check_username_existsResult
+	{
+		
+		private System.Nullable<int> _MatchingCount;
+		
+		public check_username_existsResult()
 		{
 		}
 		
@@ -6253,6 +6250,50 @@ namespace ENROLLMENT_System
 		}
 	}
 	
+	public partial class select_ContactResult
+	{
+		
+		private int _U_id;
+		
+		private string _U_pass;
+		
+		public select_ContactResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_id", DbType="Int NOT NULL")]
+		public int U_id
+		{
+			get
+			{
+				return this._U_id;
+			}
+			set
+			{
+				if ((this._U_id != value))
+				{
+					this._U_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_pass", DbType="VarChar(25)")]
+		public string U_pass
+		{
+			get
+			{
+				return this._U_pass;
+			}
+			set
+			{
+				if ((this._U_pass != value))
+				{
+					this._U_pass = value;
+				}
+			}
+		}
+	}
+	
 	public partial class select_ProffesorNameResult
 	{
 		
@@ -6889,14 +6930,22 @@ namespace ENROLLMENT_System
 		}
 	}
 	
-	public partial class select_ContactResult
+	public partial class select_UserdetailResult
 	{
 		
 		private int _U_id;
 		
+		private string _U_name;
+		
+		private string _U_Fname;
+		
+		private string _U_Lname;
+		
 		private string _U_pass;
 		
-		public select_ContactResult()
+		private string _U_Contact;
+		
+		public select_UserdetailResult()
 		{
 		}
 		
@@ -6916,6 +6965,54 @@ namespace ENROLLMENT_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_name", DbType="VarChar(50)")]
+		public string U_name
+		{
+			get
+			{
+				return this._U_name;
+			}
+			set
+			{
+				if ((this._U_name != value))
+				{
+					this._U_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_Fname", DbType="VarChar(50)")]
+		public string U_Fname
+		{
+			get
+			{
+				return this._U_Fname;
+			}
+			set
+			{
+				if ((this._U_Fname != value))
+				{
+					this._U_Fname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_Lname", DbType="VarChar(50)")]
+		public string U_Lname
+		{
+			get
+			{
+				return this._U_Lname;
+			}
+			set
+			{
+				if ((this._U_Lname != value))
+				{
+					this._U_Lname = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_pass", DbType="VarChar(25)")]
 		public string U_pass
 		{
@@ -6931,55 +7028,19 @@ namespace ENROLLMENT_System
 				}
 			}
 		}
-	}
-	
-	public partial class check_pass_existsResult
-	{
 		
-		private System.Nullable<int> _MatchingCount;
-		
-		public check_pass_existsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchingCount", DbType="Int")]
-		public System.Nullable<int> MatchingCount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_U_Contact", DbType="VarChar(15)")]
+		public string U_Contact
 		{
 			get
 			{
-				return this._MatchingCount;
+				return this._U_Contact;
 			}
 			set
 			{
-				if ((this._MatchingCount != value))
+				if ((this._U_Contact != value))
 				{
-					this._MatchingCount = value;
-				}
-			}
-		}
-	}
-	
-	public partial class check_username_existsResult
-	{
-		
-		private System.Nullable<int> _MatchingCount;
-		
-		public check_username_existsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchingCount", DbType="Int")]
-		public System.Nullable<int> MatchingCount
-		{
-			get
-			{
-				return this._MatchingCount;
-			}
-			set
-			{
-				if ((this._MatchingCount != value))
-				{
-					this._MatchingCount = value;
+					this._U_Contact = value;
 				}
 			}
 		}

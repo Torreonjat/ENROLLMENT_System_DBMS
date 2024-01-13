@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_enrollment" Class="DataClassEnrollmentDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-PPQMVH3\SQLEXPRESS;Initial Catalog=db_enrollment;Integrated Security=True" SettingsObjectName="ENROLLMENT_System.Properties.Settings" SettingsPropertyName="db_enrollmentConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLASS" Member="CLASSes">
     <Type Name="CLASS">
       <Column Name="Class_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -743,6 +744,17 @@
     <Parameter Name="U_name" Parameter="u_name" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="U_pass" Parameter="u_pass" Type="System.String" DbType="VarChar(25)" />
     <ElementType Name="User_loginResult">
+      <Column Name="U_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="U_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="U_Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="U_Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="U_pass" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="U_Contact" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_Userdetail" Method="select_Userdetail">
+    <Parameter Name="U_id" Parameter="u_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="select_UserdetailResult">
       <Column Name="U_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="U_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="U_Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
